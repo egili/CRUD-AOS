@@ -1,21 +1,22 @@
 package project;
 
-public class Telefone implements Cloneable{
+public class Telefone implements Cloneable {
 
     private int ddd;
     private long numero;
 
-    public Telefone(int ddd, long numero) throws Exception{
+    public Telefone(int ddd, long numero) throws Exception {
 
-        if(ddd < 0 || numero < 0)
+        if (ddd < 0 || numero < 0)
             throw new Exception("os dados do telefone precisam ser numero maiores do que zero");
 
         this.ddd = ddd;
         this.numero = numero;
     }
-    public Telefone(Telefone t) throws Exception{
 
-        if(t == null)
+    public Telefone(Telefone t) throws Exception {
+
+        if (t == null)
             throw new Exception("telefone inexistente");
 
         this.ddd = t.ddd;
@@ -27,23 +28,23 @@ public class Telefone implements Cloneable{
         return "telefone: " + ddd + numero;
     }
 
-    public String getTelefone(){
+    public String getTelefone() {
         return this.toString();
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
-        if(this == obj)
+        if (this == obj)
             return true;
-        if(obj == null || obj.getClass() != Telefone.class)
+        if (obj == null || obj.getClass() != Telefone.class)
             return false;
 
         Telefone telefone = (Telefone) obj;
 
-        if(this.ddd != telefone.ddd)
+        if (this.ddd != telefone.ddd)
             return false;
-        if(this.numero != telefone.numero)
+        if (this.numero != telefone.numero)
             return false;
 
         return true;
@@ -59,12 +60,12 @@ public class Telefone implements Cloneable{
         return ret < 0 ? -ret : ret;
     }
 
-    public Object clone(){
+    public Object clone() {
         Telefone tel = null;
 
-        try{
+        try {
             tel = new Telefone(this);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return tel;
