@@ -2,15 +2,13 @@ package DBOs;
 
 import project.Telefone;
 
-import java.time.YearMonth;
-import java.util.Calendar;
-
-//TODO : esta classe esta incompleta
+//TODO : esta classe esta incompleta !!
 public class Aluno implements Cloneable{
 
     private int RA;
     private String nome;
     private Telefone telefone;
+    private int CEP;
 
     public Aluno(int ra, String nome, int ddd, long numero) throws Exception {
         setRa(ra);
