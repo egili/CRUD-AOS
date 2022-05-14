@@ -2,5 +2,6 @@ package DAOs;
 
 import java.sql.*;
 
-public class Alunos {
+public class Cidadaos {
+
 }
