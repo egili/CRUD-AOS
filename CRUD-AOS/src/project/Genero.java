@@ -8,10 +8,10 @@ public class Genero implements Cloneable {
 
     public Genero(Character g) throws Exception {
 
-            if (g == null)
-                throw new Exception("Genero inválido");
+        if (g == null)
+            throw new Exception("Genero inválido");
 
-            this.genero = g;
+        this.genero = g;
     }
 
     public String getGenero(Character c) throws Exception
@@ -19,7 +19,7 @@ public class Genero implements Cloneable {
         String ret = "";
         char a = Character.toUpperCase(c);
 
-        if (a != 'M' || a !='F' || a !='O')
+        if (a != 'M' || a != 'F' || a != 'O')
             throw new Exception("Genero inválido");
 
         if (a == 'M')
@@ -40,19 +40,20 @@ public class Genero implements Cloneable {
         if(obj == null)
             return false;
 
-       if (obj.getClass() != Genero.class) return false;
+       if (obj.getClass() != Genero.class)
+           return false;
 
-        if(this.genero !=((Genero)obj).genero)
+       if(this.genero != ((Genero)obj).genero)
             return false;
 
-        return true;
+       return true;
     }
 
     @Override
     public int hashCode() {
 
         int ret = 31;
-        ret = ret * 13 + Character.valueOf(genero).hashCode();
+        ret = ret * 13 + genero.hashCode();
 
         return ret < 0 ? -ret : ret;
     }
@@ -68,7 +69,7 @@ public class Genero implements Cloneable {
         try {
             ret = new Genero (this);
         }
-        catch (Exception erro)
+        catch (Exception ignored)
         {}
         return  ret;
     }

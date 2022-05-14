@@ -2,8 +2,8 @@ package project;
 
 public class Telefone implements Cloneable {
 
-    private int ddd;
-    private long numero;
+    private final int ddd;
+    private final long numero;
 
     public Telefone(int ddd, long numero) throws Exception {
 
@@ -44,10 +44,8 @@ public class Telefone implements Cloneable {
 
         if (this.ddd != telefone.ddd)
             return false;
-        if (this.numero != telefone.numero)
-            return false;
 
-        return true;
+        return this.numero == telefone.numero;
     }
 
     @Override

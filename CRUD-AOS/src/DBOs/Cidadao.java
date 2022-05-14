@@ -2,6 +2,8 @@ package DBOs;
 
 import project.Telefone;
 
+import java.util.Objects;
+
 public class Cidadao implements Cloneable{
 
     private long CPF;
@@ -82,16 +84,14 @@ public class Cidadao implements Cloneable{
 
         if(this.CPF != cidadao.CPF)
             return false;
-        if(this.nome != cidadao.nome)
+        if(!Objects.equals(this.nome, cidadao.nome))
             return false;
         if(this.telefone != cidadao.telefone)
             return false;
         if(this.CEP != cidadao.CEP)
             return false;
-        if(this.genero != cidadao.genero)
-            return false;
 
-        return true;
+        return this.genero == cidadao.genero;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class Cidadao implements Cloneable{
         ret = ret * 13 + String.valueOf(nome).hashCode();
         ret = ret * 13 + telefone.hashCode();
         ret = ret * 13 + Integer.valueOf(CEP).hashCode();
-        ret = ret * 13 + Character.valueOf(genero);
+        ret = ret * 13 + genero;
 
         return ret < 0 ? -ret : ret;
     }
