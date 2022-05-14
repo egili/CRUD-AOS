@@ -3,25 +3,26 @@ package DBOs;
 import project.Telefone;
 
 //TODO : esta classe esta incompleta !!
-public class Aluno implements Cloneable{
+public class Cidadao implements Cloneable{
 
-    private int RA;
+    private int CPF;
     private String nome;
     private Telefone telefone;
     private int CEP;
+    private char genero;
 
-    public Aluno(int ra, String nome, int ddd, long numero) throws Exception {
+    public Cidadao(int ra, String nome, int ddd, long numero) throws Exception {
         setRa(ra);
         setNome(nome);
         this.telefone = new Telefone(ddd, numero);
     }
-    public Aluno(Aluno a) throws Exception {
+    public Cidadao(Cidadao a) throws Exception {
 
         if(a == null)
             throw new Exception("aluno inexistente");
 
         this.nome = a.nome;
-        this.RA = a.RA;
+        this.CPF = a.CPF;
         this.telefone = a.telefone;
     }
 
@@ -30,10 +31,10 @@ public class Aluno implements Cloneable{
         if(ra < 0)
             throw new Exception("o RA precisa ter o valor de um numero positivo");
 
-        RA = ra;
+        CPF = ra;
     }
-    public int getRA(){
-        return RA;
+    public int getCPF(){
+        return CPF;
     }
 
     public void setNome(String nome) throws Exception{
@@ -55,7 +56,7 @@ public class Aluno implements Cloneable{
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() + "\n RA: " + getRA() + " \n telefone: " + getTelefone();
+        return "Nome: " + getNome() + "\n RA: " + getCPF() + " \n telefone: " + getTelefone();
     }
 
     @Override
@@ -63,16 +64,16 @@ public class Aluno implements Cloneable{
 
         if(this == obj)
             return true;
-        if(obj == null || obj.getClass() != Aluno.class)
+        if(obj == null || obj.getClass() != Cidadao.class)
             return false;
 
-        Aluno aluno = (Aluno) obj;
+        Cidadao cidadao = (Cidadao) obj;
 
-        if(this.RA != aluno.RA)
+        if(this.CPF != cidadao.CPF)
             return false;
-        if(this.nome != aluno.nome)
+        if(this.nome != cidadao.nome)
             return false;
-        if(this.telefone != aluno.telefone)
+        if(this.telefone != cidadao.telefone)
             return false;
 
         return true;
@@ -82,7 +83,7 @@ public class Aluno implements Cloneable{
     public int hashCode() {
 
         int ret = 31;
-        ret = ret * 13 + Integer.valueOf(RA).hashCode();
+        ret = ret * 13 + Integer.valueOf(CPF).hashCode();
         ret = ret * 13 + String.valueOf(nome).hashCode();
         ret = ret * 13 + telefone.hashCode();
 
@@ -91,10 +92,10 @@ public class Aluno implements Cloneable{
 
     public Object clone() {
 
-        Aluno a = null;
+        Cidadao a = null;
 
         try{
-            a = new Aluno(this);
+            a = new Cidadao(this);
         } catch (Exception e){
             e.printStackTrace();
         }
