@@ -6,6 +6,10 @@ public class Telefone {
     private long numero;
 
     public Telefone(int ddd, long numero) throws Exception{
+
+        if(ddd < 0 || numero < 0)
+            throw new Exception("os dados do telefone precisam ser numero maiores do que zero");
+
         this.ddd = ddd;
         this.numero = numero;
     }
