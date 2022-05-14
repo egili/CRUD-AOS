@@ -1,12 +1,15 @@
 package DBOs;
 
 import project.Telefone;
+import java.util.Calendar;
 
 public class Aluno {
 
     private int RA;
     private String nome;
     private Telefone telefone;
+
+    private Calendar nascimento;
 
     public Aluno(int ra, String nome, int ddd, long numero) throws Exception {
         setRa(ra);
