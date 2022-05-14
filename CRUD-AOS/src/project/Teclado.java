@@ -1,4 +1,4 @@
-package resources;
+package project;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
