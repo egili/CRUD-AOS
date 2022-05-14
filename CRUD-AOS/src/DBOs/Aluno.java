@@ -1,6 +1,8 @@
 package DBOs;
 
 import project.Telefone;
+
+import java.time.YearMonth;
 import java.util.Calendar;
 
 //TODO : esta classe esta incompleta
@@ -9,8 +11,6 @@ public class Aluno implements Cloneable{
     private int RA;
     private String nome;
     private Telefone telefone;
-
-    private Calendar nascimento;
 
     public Aluno(int ra, String nome, int ddd, long numero) throws Exception {
         setRa(ra);
@@ -91,7 +91,7 @@ public class Aluno implements Cloneable{
         return ret < 0 ? -ret : ret;
     }
 
-    public Object clone () {
+    public Object clone() {
 
         Aluno a = null;
 
