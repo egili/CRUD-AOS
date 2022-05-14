@@ -4,24 +4,33 @@ import DBOs.Cidadao;
 
 public class Genero implements Cloneable {
 
-    private String generoDaPessoa;
     private Character genero;
-    //Aqui ele recbe o M or F or O
 
-
-
-    public Genero(Genero g) throws Exception {
+    public Genero(Character g) throws Exception {
 
             if (g == null)
-                throw new Exception("Genero inexistente");
+                throw new Exception("Genero inválido");
 
-            this.genero = g.genero;
+            this.genero = g;
     }
 
-    public Character getGenero(){
-        return genero;
-    }
+    public String getGenero(Character c) throws Exception
+    {
+        String ret = "";
+        char a = Character.toUpperCase(c);
 
+        if (a != 'M' || a !='F' || a !='O')
+            throw new Exception("Genero inválido");
+
+        if (a == 'M')
+            ret = "Masculino";
+        else if(a == 'F')
+            ret = "Feminino";
+        else if(a == 'O')
+            ret = "Outro";
+
+        return ret;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -46,6 +55,12 @@ public class Genero implements Cloneable {
         ret = ret * 13 + Character.valueOf(genero).hashCode();
 
         return ret < 0 ? -ret : ret;
+    }
+
+    public Genero (Genero g) throws Exception{
+        if (g == null)
+            throw new Exception("Genero inexistente");
+        this.genero = g.genero;
     }
 
     public  Object clone () {
