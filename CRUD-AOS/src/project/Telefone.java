@@ -1,6 +1,6 @@
 package project;
 
-public class Telefone {
+public class Telefone implements Cloneable{
 
     private int ddd;
     private long numero;
@@ -12,6 +12,14 @@ public class Telefone {
 
         this.ddd = ddd;
         this.numero = numero;
+    }
+    public Telefone(Telefone t) throws Exception{
+
+        if(t == null)
+            throw new Exception("telefone inexistente");
+
+        this.ddd = t.ddd;
+        this.numero = t.numero;
     }
 
     @Override
@@ -49,5 +57,16 @@ public class Telefone {
         ret = ret * 13 + Long.valueOf(this.numero).hashCode();
 
         return ret < 0 ? -ret : ret;
+    }
+
+    public Object clone(){
+        Telefone tel = null;
+
+        try{
+            tel = new Telefone(this);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return tel;
     }
 }
