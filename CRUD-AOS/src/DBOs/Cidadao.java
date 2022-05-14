@@ -17,7 +17,7 @@ public class Cidadao implements Cloneable{
         setNome(nome);
         setTelefone(ddd, numero);
         setCEP(cep);
-      //  this.genero = genero;
+        this.genero = genero;
     }
     public Cidadao(Cidadao c) throws Exception {
 
