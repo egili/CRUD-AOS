@@ -3,7 +3,8 @@ package DBOs;
 import project.Telefone;
 import java.util.Calendar;
 
-public class Aluno {
+//TODO : esta classe esta incompleta
+public class Aluno implements Cloneable{
 
     private int RA;
     private String nome;
@@ -15,6 +16,15 @@ public class Aluno {
         setRa(ra);
         setNome(nome);
         this.telefone = new Telefone(ddd, numero);
+    }
+    public Aluno(Aluno a) throws Exception {
+
+        if(a == null)
+            throw new Exception("aluno inexistente");
+
+        this.nome = a.nome;
+        this.RA = a.RA;
+        this.telefone = a.telefone;
     }
 
     public void setRa(int ra) throws Exception{
@@ -79,5 +89,17 @@ public class Aluno {
         ret = ret * 13 + telefone.hashCode();
 
         return ret < 0 ? -ret : ret;
+    }
+
+    public Object clone () {
+
+        Aluno a = null;
+
+        try{
+            a = new Aluno(this);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return a;
     }
 }
