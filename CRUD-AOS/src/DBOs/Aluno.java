@@ -15,8 +15,10 @@ public class Aluno {
     }
 
     public void setRa(int ra) throws Exception{
+
         if(ra < 0)
             throw new Exception("o RA precisa ter o valor de um numero positivo");
+
         RA = ra;
     }
     public int getRA(){
