@@ -1,5 +1,6 @@
 package DBOs;
 
+import project.Genero;
 import project.Telefone;
 
 import java.util.Objects;
@@ -10,14 +11,14 @@ public class Cidadao implements Cloneable{
     private String nome;
     private Telefone telefone;
     private int CEP;
-    private char genero;
+    private Genero genero;
 
     public Cidadao(long cpf, String nome, int ddd, long numero, int cep, char genero) throws Exception {
         setCPF(cpf);
         setNome(nome);
         setTelefone(ddd, numero);
         setCEP(cep);
-        this.genero = genero;
+        setGenero(genero);
     }
     public Cidadao(Cidadao c) throws Exception {
 
@@ -27,6 +28,8 @@ public class Cidadao implements Cloneable{
         setCPF(c.CPF);
         setNome(c.nome);
         this.telefone = new Telefone(c.telefone);
+        setCEP(c.CEP);
+        this.genero = new Genero(c.genero);
     }
 
     public void setCPF(long cpf) throws Exception{
@@ -67,9 +70,16 @@ public class Cidadao implements Cloneable{
         return CEP;
     }
 
+    public void setGenero(char genero) throws Exception{
+        this.genero = new Genero(genero);
+    }
+    public Genero getGenero() {
+        return genero;
+    }
+
     @Override
     public String toString() {
-        return "Nome: " + getNome() + "\n CPF: " + getCPF() + " \n telefone: " + getTelefone() + "\n CEP: " + getCEP();
+        return "Nome: " + getNome() + "\n CPF: " + getCPF() + " \n telefone: " + getTelefone() + "\n CEP: " + getCEP() + "\n genero: " + getGenero();
     }
 
     @Override
@@ -102,7 +112,7 @@ public class Cidadao implements Cloneable{
         ret = ret * 13 + String.valueOf(nome).hashCode();
         ret = ret * 13 + telefone.hashCode();
         ret = ret * 13 + Integer.valueOf(CEP).hashCode();
-        ret = ret * 13 + genero;
+        ret = ret * 13 + genero.hashCode();
 
         return ret < 0 ? -ret : ret;
     }

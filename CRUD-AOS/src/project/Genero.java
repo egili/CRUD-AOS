@@ -1,7 +1,5 @@
 package project;
 
-import DBOs.Cidadao;
-
 public class Genero implements Cloneable {
 
     private Character genero;
@@ -11,11 +9,10 @@ public class Genero implements Cloneable {
         if (g == null)
             throw new Exception("Genero inválido");
 
-        this.genero = g;
+        setGenero(g);
     }
 
-    public String getGenero(Character c) throws Exception
-    {
+    public String setGenero(Character c) throws Exception {
         String ret = "";
         char a = Character.toUpperCase(c);
 
@@ -31,7 +28,14 @@ public class Genero implements Cloneable {
 
         return ret;
     }
+    public String getGenero() throws Exception {
+        return setGenero(genero);
+    }
 
+    @Override
+    public String toString(){
+        return "genero: " + genero;
+    }
     @Override
     public boolean equals(Object obj) {
 
@@ -43,10 +47,7 @@ public class Genero implements Cloneable {
        if (obj.getClass() != Genero.class)
            return false;
 
-       if(this.genero != ((Genero)obj).genero)
-            return false;
-
-       return true;
+       return this.genero == ((Genero) obj).genero;
     }
 
     @Override
@@ -64,7 +65,7 @@ public class Genero implements Cloneable {
         this.genero = g.genero;
     }
 
-    public  Object clone () {
+    public Object clone () {
         Genero ret = null;
         try {
             ret = new Genero (this);
