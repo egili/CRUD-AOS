@@ -1,4 +1,4 @@
-package project.template;
+package project.template.bd;
 
 import java.sql.Array;
 import java.sql.Blob;
