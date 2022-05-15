@@ -7,17 +7,17 @@ public class Genero implements Cloneable {
     public Genero(Character g) throws Exception {
 
         if (g == null)
-            throw new Exception("Genero inválido");
+            throw new Exception("Genero invalido");
 
         setGenero(g);
     }
 
-    public String setGenero(Character c) throws Exception {
+    private String setGenero(Character c) throws Exception {
         String ret = "";
         var a = Character.toUpperCase(c);
 
         if (a != 'M' || a != 'F' || a != 'O')
-            throw new Exception("Genero inválido");
+            throw new Exception("Genero invalido");
 
         if (a == 'M')
             ret = "Masculino";
