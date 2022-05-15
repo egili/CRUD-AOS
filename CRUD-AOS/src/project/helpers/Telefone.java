@@ -58,6 +58,7 @@ public class Telefone implements Cloneable {
         return ret < 0 ? -ret : ret;
     }
 
+    @Override
     public Object clone() {
         Telefone tel = null;
 

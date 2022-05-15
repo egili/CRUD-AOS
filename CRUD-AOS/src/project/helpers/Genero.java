@@ -65,6 +65,7 @@ public class Genero implements Cloneable {
         this.genero = g.genero;
     }
 
+    @Override
     public Object clone () {
         Genero ret = null;
         try {

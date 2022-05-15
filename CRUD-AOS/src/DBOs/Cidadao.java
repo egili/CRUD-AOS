@@ -117,6 +117,7 @@ public class Cidadao implements Cloneable{
         return ret < 0 ? -ret : ret;
     }
 
+    @Override
     public Object clone() {
 
         Cidadao c = null;
