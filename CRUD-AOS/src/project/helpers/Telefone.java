@@ -1,4 +1,4 @@
-package project;
+package project.helpers;
 
 public class Telefone implements Cloneable {
 

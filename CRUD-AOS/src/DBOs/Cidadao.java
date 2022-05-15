@@ -1,7 +1,7 @@
 package DBOs;
 
-import project.Genero;
-import project.Telefone;
+import project.helpers.Genero;
+import project.helpers.Telefone;
 
 import java.util.Objects;
 
