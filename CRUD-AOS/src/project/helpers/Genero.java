@@ -1,6 +1,4 @@
-package project;
-
-import DBOs.Cidadao;
+package project.helpers;
 
 public class Genero implements Cloneable {
 
@@ -8,18 +6,17 @@ public class Genero implements Cloneable {
 
     public Genero(Character g) throws Exception {
 
-            if (g == null)
-                throw new Exception("Genero inválido");
+        if (g == null)
+            throw new Exception("Genero inválido");
 
-            this.genero = g;
+        setGenero(g);
     }
 
-    public String getGenero(Character c) throws Exception
-    {
+    public String setGenero(Character c) throws Exception {
         String ret = "";
-        char a = Character.toUpperCase(c);
+        var a = Character.toUpperCase(c);
 
-        if (a != 'M' || a !='F' || a !='O')
+        if (a != 'M' || a != 'F' || a != 'O')
             throw new Exception("Genero inválido");
 
         if (a == 'M')
@@ -31,7 +28,14 @@ public class Genero implements Cloneable {
 
         return ret;
     }
+    public String getGenero() throws Exception {
+        return setGenero(genero);
+    }
 
+    @Override
+    public String toString(){
+        return "genero: " + genero;
+    }
     @Override
     public boolean equals(Object obj) {
 
@@ -40,19 +44,17 @@ public class Genero implements Cloneable {
         if(obj == null)
             return false;
 
-       if (obj.getClass() != Genero.class) return false;
+       if (obj.getClass() != Genero.class)
+           return false;
 
-        if(this.genero !=((Genero)obj).genero)
-            return false;
-
-        return true;
+       return this.genero == ((Genero) obj).genero;
     }
 
     @Override
     public int hashCode() {
 
         int ret = 31;
-        ret = ret * 13 + Character.valueOf(genero).hashCode();
+        ret = ret * 13 + genero.hashCode();
 
         return ret < 0 ? -ret : ret;
     }
@@ -63,12 +65,12 @@ public class Genero implements Cloneable {
         this.genero = g.genero;
     }
 
-    public  Object clone () {
+    public Object clone () {
         Genero ret = null;
         try {
             ret = new Genero (this);
         }
-        catch (Exception erro)
+        catch (Exception ignored)
         {}
         return  ret;
     }
