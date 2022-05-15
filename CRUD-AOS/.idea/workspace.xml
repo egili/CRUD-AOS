@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="" />
+    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/project/ClienteWS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/ClienteWS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/InfoCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/InfoCidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/InfoEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/InfoEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Logradouro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/Logradouro.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
