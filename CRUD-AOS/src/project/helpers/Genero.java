@@ -14,7 +14,7 @@ public class Genero implements Cloneable {
 
     public String setGenero(Character c) throws Exception {
         String ret = "";
-        char a = Character.toUpperCase(c);
+        var a = Character.toUpperCase(c);
 
         if (a != 'M' || a != 'F' || a != 'O')
             throw new Exception("Genero inválido");
