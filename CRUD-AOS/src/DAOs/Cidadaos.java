@@ -2,11 +2,13 @@ package DAOs;
 
 import DBOs.Cidadao;
 import bd.BDSQLServer;
+import bd.core.MeuResultSet;
+
 import java.sql.SQLException;
 
 public class Cidadaos {
-    public static void incluir (Cidadao cidadao) throws Exception
-    {
+
+    public static void create (Cidadao cidadao) throws Exception{
         if (cidadao==null)
             throw new Exception ("Cidadao nao inserido");
 
@@ -22,9 +24,9 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.prepareStatement (sql);
 
-            BDSQLServer.COMANDO.setLong   (1, cidadao.getCPF());
+            BDSQLServer.COMANDO.setString (1, String.valueOf(cidadao.getCPF()));
             BDSQLServer.COMANDO.setString (2, cidadao.getNome());
-            BDSQLServer.COMANDO.setLong   (3, Long.parseLong(cidadao.getTelefone()));
+            BDSQLServer.COMANDO.setString (3, String.valueOf(Long.parseLong(cidadao.getTelefone())));
             BDSQLServer.COMANDO.setString (5, String.valueOf(cidadao.getGenero()));
             BDSQLServer.COMANDO.setInt    (4, cidadao.getCEP());
 
@@ -35,6 +37,104 @@ public class Cidadaos {
         {
             BDSQLServer.COMANDO.rollback();
             throw new Exception ("Erro ao inserir cidadao");
+        }
+    }
+
+    public static Cidadao read(int cpf) throws Exception{
+
+        Cidadao cidadao = null;
+
+        try {
+            String sql;
+
+            sql = "SELECT * " +
+                    "FROM cidadao" +
+                    "WHERE cid_cpf = ?";
+
+            BDSQLServer.COMANDO.prepareStatement(sql);
+            BDSQLServer.COMANDO.setInt(1, cpf);
+
+            MeuResultSet resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+
+            if(!resultado.first())
+                throw new Exception("sem dados correspondemtes ao parametro informado");
+
+            cidadao = new Cidadao(resultado.getLong(Math.toIntExact(Long.valueOf("cid_cpf"))),
+                    resultado.getString("cid_nome"),
+                    resultado.getString("cid_telefone"),
+                    resultado.getString("cid_genero"),
+                    resultado.getInt("cid_cep")); // FIXME: dados do Cidadao
+
+        } catch (SQLException erro){
+            throw new Exception("erro ao procurar o cidadao");
+        }
+        return cidadao;
+    }
+
+    public static MeuResultSet readAll() throws Exception{
+
+        MeuResultSet ret = null;
+
+        try{
+            String sql;
+
+            sql = "SELECT * " + "FROM cidadao";
+
+            BDSQLServer.COMANDO.prepareStatement(sql);
+
+            ret = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+        } catch(SQLException err){
+            throw new Exception("erro ao ler os dados dos cidadaos");
+        }
+        return ret;
+    }
+
+    public static void update(Cidadao cidadao) throws Exception{
+
+        if(cidadao == null)
+            throw new Exception("cidadao nao fornecido");
+        if(!CRUDHelper.cadastrado((int) cidadao.getCPF()))
+            throw new Exception("nao cadastrado");
+
+        try {
+            String sql;
+
+            sql = "UPDATE cidadao " +
+                    "SET " + // TODO: set pra cada atributo do cidadao
+                    "WHERE cid_cpf = ?";
+
+            BDSQLServer.COMANDO.prepareStatement (sql);
+
+            BDSQLServer.COMANDO.setInt(3, (int) cidadao.getCPF());
+
+            BDSQLServer.COMANDO.executeUpdate();
+            BDSQLServer.COMANDO.commit();
+        } catch (SQLException err){
+            BDSQLServer.COMANDO.rollback();
+            throw new Exception("erro ao atualizar dados do cidadao");
+        }
+    }
+
+    public static void delete(int cpf) throws Exception{
+
+        if(!CRUDHelper.cadastrado(cpf))
+            throw new Exception("nao cadastrado");
+
+        try{
+            String sql;
+
+            sql = "DELETE FROM cidadao " +
+                    "WHERE cid_cpf = ?";
+
+            BDSQLServer.COMANDO.prepareStatement(sql);
+
+            BDSQLServer.COMANDO.setInt(1, cpf);
+
+            BDSQLServer.COMANDO.executeUpdate();
+            BDSQLServer.COMANDO.commit();
+        } catch (SQLException err){
+            BDSQLServer.COMANDO.rollback();
+            throw new Exception("erro ao deletar o cidadao");
         }
     }
 }

@@ -10,8 +10,8 @@ public class Cidadao implements Cloneable {
     private long CPF;
     private String nome;
     private Telefone telefone;
-    private int CEP;
     private Genero genero;
+    private int CEP;
 
     public Cidadao(long cpf, String nome, int ddd, long numero, int cep, char genero) throws Exception {
         setCPF(cpf);
@@ -64,6 +64,14 @@ public class Cidadao implements Cloneable {
         return telefone.getTelefone();
     }
 
+    public void setGenero(char genero) throws Exception {
+        this.genero = new Genero(genero);
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
     public void setCEP(int cep) throws Exception {
         if (cep < 0)
             throw new Exception();
@@ -75,13 +83,6 @@ public class Cidadao implements Cloneable {
         return CEP;
     }
 
-    public void setGenero(char genero) throws Exception {
-        this.genero = new Genero(genero);
-    }
-
-    public Genero getGenero() {
-        return genero;
-    }
 
     @Override
     public String toString() {
