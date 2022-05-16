@@ -14,8 +14,8 @@ public class Cidadaos {
         {
             String sql;
 
-            sql = "INSERT INTO CIDADAOS " +
-                  "(CPF,NOME,TELEFONE,CEP,GENERO) " +
+            sql = "INSERT INTO cidadao " +
+                  "(cid_cpf, cid_nome, cid_telefone, cid_genero, cid_cep) " +
                   "VALUES " +
                   "(?,?,?,?,?)";  //Marcando o lugar aonde mais tarde vai
                                   //entrar os valores inseridos
@@ -24,9 +24,9 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.setLong   (1, cidadao.getCPF());
             BDSQLServer.COMANDO.setString (2, cidadao.getNome());
-            BDSQLServer.COMANDO.setLong   (3, cidadao.getTelefone());
+            BDSQLServer.COMANDO.setLong   (3, Long.parseLong(cidadao.getTelefone()));
+            BDSQLServer.COMANDO.setString (5, String.valueOf(cidadao.getGenero()));
             BDSQLServer.COMANDO.setInt    (4, cidadao.getCEP());
-            BDSQLServer.COMANDO.setString (5, cidadao.getGenero());
 
             BDSQLServer.COMANDO.executeUpdate (); //comando pra atualizar o banco
             BDSQLServer.COMANDO.commit        ();
