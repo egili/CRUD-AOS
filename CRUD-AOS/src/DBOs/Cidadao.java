@@ -13,12 +13,12 @@ public class Cidadao implements Cloneable {
     private Genero genero;
     private int CEP;
 
-    public Cidadao(long cpf, String nome, int ddd, long numero, int cep, char genero) throws Exception {
+    public Cidadao(long cpf, String nome, int ddd, long numero, char genero, int cep) throws Exception {
         setCPF(cpf);
         setNome(nome);
         setTelefone(ddd, numero);
-        setCEP(cep);
         setGenero(genero);
+        setCEP(cep);
     }
 
     public Cidadao(Cidadao c) throws Exception {
@@ -29,8 +29,8 @@ public class Cidadao implements Cloneable {
         setCPF(c.CPF);
         setNome(c.nome);
         this.telefone = new Telefone(c.telefone);
-        setCEP(c.CEP);
         this.genero = new Genero(c.genero);
+        setCEP(c.CEP);
     }
 
     public void setCPF(long cpf) throws Exception {

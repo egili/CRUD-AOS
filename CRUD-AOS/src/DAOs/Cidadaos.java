@@ -61,8 +61,9 @@ public class Cidadaos {
 
             cidadao = new Cidadao(resultado.getLong(Math.toIntExact(Long.valueOf("cid_cpf"))),
                     resultado.getString("cid_nome"),
-                    resultado.getString("cid_telefone"),
-                    resultado.getString("cid_genero"),
+                    resultado.getInt(CRUDHelper.getDDDdoCidadao("cid_telefone")), //ddd
+                    resultado.getLong(CRUDHelper.getNumerodoCidadao("cid_telefone")), // numero de telefone
+                    resultado.getString(CRUDHelper.getGeneroAsChar("cid_genero")),
                     resultado.getInt("cid_cep")); // FIXME: dados do Cidadao
 
         } catch (SQLException erro){
