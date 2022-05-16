@@ -1,14 +1,13 @@
 package DAOs;
 
-import java.sql.*;
-import bd.*;
-import bd.core.*;
-import bd.dbos.*;
+import DBOs.Cidadao;
+import bd.BDSQLServer;
+import java.sql.SQLException;
 
 public class Cidadaos {
-    public static void incluir (Cidadaos cidadaos) throws Exception
+    public static void incluir (Cidadao cidadao) throws Exception
     {
-        if (cidadaos==null)
+        if (cidadao==null)
             throw new Exception ("Cidadao nao inserido");
 
         try
@@ -23,11 +22,11 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.prepareStatement (sql);
 
-            BDSQLServer.COMANDO.setLong   (1, cidadaos.getCPF());
-            BDSQLServer.COMANDO.setString (2, cidadaos.getNome());
-            BDSQLServer.COMANDO.setLong   (3, cidadaos.getTelefone());
-            BDSQLServer.COMANDO.setInt    (4, cidadaos.getCEP());
-            BDSQLServer.COMANDO.setString (5, cidadaos.getGenero());
+            BDSQLServer.COMANDO.setLong   (1, cidadao.getCPF());
+            BDSQLServer.COMANDO.setString (2, cidadao.getNome());
+            BDSQLServer.COMANDO.setLong   (3, cidadao.getTelefone());
+            BDSQLServer.COMANDO.setInt    (4, cidadao.getCEP());
+            BDSQLServer.COMANDO.setString (5, cidadao.getGenero());
 
             BDSQLServer.COMANDO.executeUpdate (); //comando pra atualizar o banco
             BDSQLServer.COMANDO.commit        ();
