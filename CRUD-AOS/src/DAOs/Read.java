@@ -37,7 +37,7 @@ public class Read {
 
     public static MeuResultSet readAll() throws Exception{
 
-        MeuResultSet resultado = null;
+        MeuResultSet ret = null;
 
         try{
             String sql;
@@ -46,11 +46,11 @@ public class Read {
 
             BDSQLServer.COMANDO.prepareStatement(sql);
 
-            resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+            ret = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
         } catch(SQLException err){
             throw new Exception("erro ao ler os dados dos cidadaos");
-        } finally {
-            return resultado;
         }
+            return ret;
+
     }
 }
