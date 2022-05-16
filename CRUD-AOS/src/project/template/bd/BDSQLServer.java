@@ -1,7 +1,6 @@
-package bd;
+package project.template.bd;
 
-import bd.core.*;
-import DAOs.*;
+import project.template.bd.core.*;
 
 public class BDSQLServer
 {

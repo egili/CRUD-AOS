@@ -1,4 +1,4 @@
-package bd.core;
+package project.template.bd.core;
 
 import java.util.ArrayList;
 import java.sql.Connection;
