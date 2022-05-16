@@ -1,6 +1,6 @@
-<h1> CRUD - Java + SQL Server ☕ </h1>
+<h1> CRUD em BD - Java + SQL Server ☕ </h1>
 
-Implementado um CRUD em BD, utilizando Java e SQL Server. Trabalho de Arquitetura Orientada a Serviços, do COTUCA
+Trabalho de Arquitetura Orientada a Serviços, do COTUCA
 
 <hr/>
 <h3>Autores:</h3>
