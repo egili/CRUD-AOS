@@ -2,7 +2,6 @@ package DBOs;
 
 import project.helpers.Genero;
 import project.helpers.Telefone;
-
 import java.util.Objects;
 
 public class Cidadao implements Cloneable { //FIXME : trocar genero e telefofone
