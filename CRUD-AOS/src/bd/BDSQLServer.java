@@ -16,11 +16,8 @@ public class BDSQLServer
             comando =
                     new MeuPreparedStatement (
                             "com.microsoft.sqlserver.jdbc.SQLServerDriver", //especifica o driver
-                            "jdbc:sqlserver://SERVIDOR:1433;databasename=BD",
-                            //apagar SERVIDOR e colocar nome da máquina onde roda o gerenciador do BD, no caso localhost ou IP
-                            //apagar BD descobrir o nome do meu banco de dados e escrever alii
-                            "USUARIO", "SENHA");
-            // USUARIO substitui pelo usaurio do banco e SENHA em senha
+                            "jdbc:sqlserver://192.168.15.26:1433;databasename=LAPTOP-7PBQ2CA8\\SQLEXPRESS",
+                            "Proj.Mag", "Proj.Mag");
             // tem que implementar a pasta core
         }
         catch (Exception erro)
