@@ -1,7 +1,7 @@
 package bd;
 
 import bd.core.*;
-import DAOs.*; //Não sei se o import ta certo, ele não ficou colorido
+import DAOs.*;
 
 public class BDSQLServer
 {
