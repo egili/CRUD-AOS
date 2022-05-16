@@ -13,7 +13,7 @@ public class Cidadao implements Cloneable {
     private Genero genero;
     private int CEP;
 
-    public Cidadao(long cpf, String nome, int ddd, long numero, char genero, int cep) throws Exception {
+    public Cidadao(long cpf, String nome, int ddd, long numero, String genero, int cep) throws Exception {
         setCPF(cpf);
         setNome(nome);
         setTelefone(ddd, numero);
@@ -64,7 +64,7 @@ public class Cidadao implements Cloneable {
         return telefone.getTelefone();
     }
 
-    public void setGenero(char genero) throws Exception {
+    public void setGenero(String genero) throws Exception {
         this.genero = new Genero(genero);
     }
 

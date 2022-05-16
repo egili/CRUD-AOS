@@ -58,7 +58,7 @@ public class CRUDHelper {
         return ret;
     }
 
-    public static String getGeneroAsChar(String genero){
+    public static String getGeneroAsCharSize(String genero){
 
         String ret = null;
 

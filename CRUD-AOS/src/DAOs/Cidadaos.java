@@ -59,12 +59,12 @@ public class Cidadaos {
             if(!resultado.first())
                 throw new Exception("sem dados correspondemtes ao parametro informado");
 
-            cidadao = new Cidadao(resultado.getLong(Math.toIntExact(Long.valueOf("cid_cpf"))),
+            cidadao = new Cidadao(resultado.getLong(Math.toIntExact(Long.parseLong("cid_cpf"))),
                     resultado.getString("cid_nome"),
                     resultado.getInt(CRUDHelper.getDDDdoCidadao("cid_telefone")), //ddd
                     resultado.getLong(CRUDHelper.getNumerodoCidadao("cid_telefone")), // numero de telefone
-                    resultado.getString(CRUDHelper.getGeneroAsChar("cid_genero")),
-                    resultado.getInt("cid_cep")); // FIXME: dados do Cidadao
+                    resultado.getString(CRUDHelper.getGeneroAsCharSize("cid_genero")),
+                    resultado.getInt("cid_cep"));
 
         } catch (SQLException erro){
             throw new Exception("erro ao procurar o cidadao");
