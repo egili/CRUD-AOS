@@ -27,11 +27,11 @@ public class Read {
                 throw new Exception("sem dados correspondemtes ao parametro informado");
 
             cidadao = New Cidadao(); // FIXME: dados do Cidadao
+
         } catch (SQLException erro){
             throw new Exception("erro ao procurar o cidadao");
-        } finally {
-            return cidadao;
         }
+        return cidadao;
     }
 
     public static MeuResultSet readAll() throws Exception{
