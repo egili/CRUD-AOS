@@ -5,7 +5,7 @@ import project.helpers.Telefone;
 
 import java.util.Objects;
 
-public class Cidadao implements Cloneable {
+public class Cidadao implements Cloneable { //FIXME : trocar genero e telefofone
 
     private long CPF;
     private String nome;
