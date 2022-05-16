@@ -26,8 +26,7 @@ public class CRUDHelper {
             ret = resultado.first();
         } catch (SQLException err){
             throw new Exception("erro ao procurar cidadao");
-        } finally {
-            return ret;
         }
+        return ret;
     }
 }
