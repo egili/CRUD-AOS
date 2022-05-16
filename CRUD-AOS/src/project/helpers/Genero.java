@@ -1,32 +1,46 @@
 package project.helpers;
 
+import java.util.Objects;
+
 public class Genero implements Cloneable {
 
-    private Character genero;
+    private String genero;
 
-    public Genero(Character g) throws Exception {
+    public Genero(String g) throws Exception {
 
         if (g == null)
             throw new Exception("Genero invalido");
+        if(g.length() > 1)
+            throw new Exception("apenas 1 caracter eh aceito na definicao de genero");
 
         setGenero(g);
     }
 
-    private String setGenero(Character c) throws Exception {
-        String ret = "";
-        var a = Character.toUpperCase(c);
+//    private String setGeneroOLD(Character c) throws Exception {
+//        String ret = "";
+//        var a = Character.toUpperCase(c);
+//
+//        if (a != 'M' || a != 'F' || a != 'O')
+//            throw new Exception("Genero invalido");
+//
+//        if (a == 'M')
+//            ret = "Masculino";
+//        else if(a == 'F')
+//            ret = "Feminino";
+//        else if(a == 'O')
+//            ret = "Outro";
+//
+//        return ret;
+//    }
+//
+    private String setGenero(String generoDoCidadao) throws Exception{
 
-        if (a != 'M' || a != 'F' || a != 'O')
+        String ret = generoDoCidadao.toUpperCase();
+
+        if (ret != "M" || ret != "F" || ret != "O")
             throw new Exception("Genero invalido");
 
-        if (a == 'M')
-            ret = "Masculino";
-        else if(a == 'F')
-            ret = "Feminino";
-        else if(a == 'O')
-            ret = "Outro";
-
-        return ret;
+        return ret == "M" ? "Masculino" : ret == "F" ? "Feminino" : "Outro";
     }
     public String getGenero() throws Exception {
         return setGenero(genero);
@@ -47,7 +61,7 @@ public class Genero implements Cloneable {
        if (obj.getClass() != Genero.class)
            return false;
 
-       return this.genero == ((Genero) obj).genero;
+       return Objects.equals(this.genero, ((Genero) obj).genero);
     }
 
     @Override
