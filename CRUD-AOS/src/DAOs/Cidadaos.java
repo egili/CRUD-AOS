@@ -27,8 +27,8 @@ public class Cidadaos {
             BDSQLServer.COMANDO.setString (1, String.valueOf(cidadao.getCPF()));
             BDSQLServer.COMANDO.setString (2, cidadao.getNome());
             BDSQLServer.COMANDO.setString (3, String.valueOf(Long.parseLong(cidadao.getTelefone())));
-            BDSQLServer.COMANDO.setString (5, String.valueOf(cidadao.getGenero()));
-            BDSQLServer.COMANDO.setInt    (4, cidadao.getCEP());
+            BDSQLServer.COMANDO.setString (4, String.valueOf(cidadao.getGenero()));
+            BDSQLServer.COMANDO.setInt    (5, cidadao.getCEP());
 
             BDSQLServer.COMANDO.executeUpdate (); //comando pra atualizar o banco
             BDSQLServer.COMANDO.commit        ();
@@ -101,12 +101,19 @@ public class Cidadaos {
             String sql;
 
             sql = "UPDATE cidadao " +
-                    "SET " + // TODO: set pra cada atributo do cidadao
+                    "SET cid_nome = ? " + 
+                    "SET cid_telefone = ? " +
+                    "SET cid_genero = ? " +
+                    "SET cid_cep = ? " +
                     "WHERE cid_cpf = ?";
 
             BDSQLServer.COMANDO.prepareStatement (sql);
 
-            BDSQLServer.COMANDO.setInt(3, (int) cidadao.getCPF());
+            BDSQLServer.COMANDO.setString(1, cidadao.getNome());
+            BDSQLServer.COMANDO.setString(2, String.valueOf(Long.parseLong(cidadao.getTelefone())));
+            BDSQLServer.COMANDO.setString(3, String.valueOf(cidadao.getGenero()));
+            BDSQLServer.COMANDO.setInt(4, cidadao.getCEP());
+            BDSQLServer.COMANDO.setString(5, String.valueOf(cidadao.getCPF()));
 
             BDSQLServer.COMANDO.executeUpdate();
             BDSQLServer.COMANDO.commit();

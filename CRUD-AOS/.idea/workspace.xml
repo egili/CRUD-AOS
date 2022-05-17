@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/project/Programa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/helpers/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/helpers/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/ClienteWS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/ClienteWS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/InfoCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoCidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/InfoEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/Logradouro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/Logradouro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBOs/Cidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBOs/Cidadao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,23 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/eliseu.gili/Documents/Repositórios/CRUD-AOS/CRUD-AOS/src/resources/junit-4.13.2.jar",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.language"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/eliseu.gili/Documents/Repositórios/CRUD-AOS/CRUD-AOS/src/resources/junit-4.13.2.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.project.helpers.test">
     <configuration name="project.helpers.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.helpers.test" />
