@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/helpers/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/helpers/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/ClienteWS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/ClienteWS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/InfoCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoCidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/InfoEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/template/Logradouro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/Logradouro.java" afterDir="false" />
-    </list>
+    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
