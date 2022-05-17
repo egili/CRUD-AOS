@@ -1,4 +1,4 @@
-//package project.template;
+package project.template;
 //
 //import java.io.BufferedReader;
 //import java.io.DataOutputStream;

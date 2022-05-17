@@ -6,11 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOs/CRUDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/CRUDHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOs/Cidadaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/Cidadaos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOs/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBOs/Cidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBOs/Cidadao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/helpers/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/helpers/Genero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/template/ClienteWS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/ClienteWS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/template/InfoCidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoCidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/template/InfoEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/InfoEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/template/Logradouro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/template/project/template/Logradouro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +69,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/eliseu.gili/Documents/Repositórios/CRUD-AOS/CRUD-AOS/src/resources/junit-4.13.2.jar",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.language"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.project.helpers.test">
+    <configuration name="project.helpers.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.helpers.test" />
+      <module name="CRUD-AOS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.helpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DAOs.test" />
       <module name="CRUD-AOS" />
@@ -76,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.project.helpers.test" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -119,5 +148,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -16,31 +16,31 @@ public class Genero implements Cloneable {
         setGenero(g);
     }
 
-//    private String setGeneroOLD(Character c) throws Exception {
-//        String ret = "";
-//        var a = Character.toUpperCase(c);
-//
-//        if (a != 'M' || a != 'F' || a != 'O')
-//            throw new Exception("Genero invalido");
-//
-//        if (a == 'M')
-//            ret = "Masculino";
-//        else if(a == 'F')
-//            ret = "Feminino";
-//        else if(a == 'O')
-//            ret = "Outro";
-//
-//        return ret;
-//    }
-//
-    private String setGenero(String generoDoCidadao) throws Exception{
+ /*   private String setGeneroOLD(Character c) throws Exception {
+        String ret = "";
+        var a = Character.toUpperCase(c);
 
-        String ret = generoDoCidadao.toUpperCase();
-
-        if (ret != "M" || ret != "F" || ret != "O")
+        if (a != 'M' || a != 'F' || a != 'O')
             throw new Exception("Genero invalido");
 
-        return ret == "M" ? "Masculino" : ret == "F" ? "Feminino" : "Outro";
+        if (a == 'M')
+            ret = "Masculino";
+        else if(a == 'F')
+            ret = "Feminino";
+        else if(a == 'O')
+            ret = "Outro";
+
+        return ret;
+    }*/
+
+    public String setGenero(String generoDoCidadao) throws Exception{
+
+    	if(generoDoCidadao == null) 
+    		throw new Exception("o genero estava nulo");
+    	
+        String ret = generoDoCidadao.toUpperCase();
+
+        return ret.equals("M") ? "Masculino" : ret.equals("F") ? "Feminino" : "Outro";
     }
     public String getGenero() throws Exception {
         return setGenero(genero);
