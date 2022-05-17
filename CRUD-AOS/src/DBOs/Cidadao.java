@@ -6,13 +6,15 @@ import java.util.Objects;
 
 public class Cidadao implements Cloneable {
 
-    private long CPF;
+    private String CPF;
     private String nome;
-    private Telefone telefone;
-    private Genero genero;
+    private String telefone;
+    private String genero;
     private int CEP;
+    private int numero;
+    private int complemento;
 
-    public Cidadao(long cpf, String nome, int ddd, long numero, String genero, int cep) throws Exception {
+    public Cidadao(String cpf, String nome, int ddd, long numero, String genero, int cep) throws Exception {
         setCPF(cpf);
         setNome(nome);
         setTelefone(ddd, numero);
@@ -32,7 +34,7 @@ public class Cidadao implements Cloneable {
         setCEP(c.CEP);
     }
 
-    public void setCPF(long cpf) throws Exception {
+    public void setCPF(String cpf) throws Exception {
 
         if (cpf < 0)
             throw new Exception("o CPF precisa ter o valor de um numero positivo");
