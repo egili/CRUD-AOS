@@ -33,14 +33,11 @@ public class Genero implements Cloneable {
 //        return ret;
 //    }
 //
-    private String setGenero(String generoDoCidadao) throws Exception{
+    public String setGenero(String generoDoCidadao) throws Exception{
 
         String ret = generoDoCidadao.toUpperCase();
 
-        if (ret != "M" || ret != "F" || ret != "O")
-            throw new Exception("Genero invalido");
-
-        return ret == "M" ? "Masculino" : ret == "F" ? "Feminino" : "Outro";
+        return ret.equals("M") ? "Masculino" : ret.equals("F") ? "Feminino" : "Outro";
     }
     public String getGenero() throws Exception {
         return setGenero(genero);
