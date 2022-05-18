@@ -22,7 +22,7 @@ public class Programa {
 
         try{
             opcao = Teclado.getUmChar();
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
 
         if(Character.toUpperCase(opcao) == 'C'){
             try{
@@ -55,19 +55,12 @@ public class Programa {
                 System.out.println("\n Deseja fazer uma consulta nos dados de todos os cidadaos cadastrados? [S] Sim ou [N] Não: ");
 
                 if (Character.toUpperCase(opcao) == 'S') {
+
+                   // MEU DEUS EU NÃO SEI COMO FAZER O READALL
                     System.out.println("Lista dos dados cadastrados: ");
-                    cpf = Teclado.getUmString();
-                    nome = Teclado.getUmString();
-                    telefone = Teclado.getUmString();
-                    cep = Teclado.getUmInt();
-                    numeroCasa = Teclado.getUmInt();
-                    complemento = Teclado.getUmString();
-                    System.out.println(cpf);
-                    System.out.println(nome);
-                    System.out.println(telefone);
-                    System.out.println(cep);
-                    System.out.println(numeroCasa);
-                    System.out.println(complemento);
+
+                    //cidadao = new Cidadao(Cidadaos.readAll());
+
                 }
                 else{
                     System.out.println("Digite o CPF do cidadao que deseja consultar: ");
