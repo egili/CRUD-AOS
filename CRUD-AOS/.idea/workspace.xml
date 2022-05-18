@@ -5,33 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/CidadaoHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/CidadaoHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/CidadaoHelper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoCidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/InfoEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/template/Logradouro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/resources/Script_Banco.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/resources/Script_Banco.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOs/CRUDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/CRUDHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOs/Cidadaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/Cidadaos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBOs/Cidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBOs/Cidadao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Programa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Programa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/helpers/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/helpers/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/helpers/Telefone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/helpers/Telefone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Script_Banco.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Script_Banco.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

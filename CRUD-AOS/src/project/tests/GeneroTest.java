@@ -1,4 +1,4 @@
-//package project.tests;
+package project.tests;
 //
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //import static org.junit.Assert.assertThrows;
