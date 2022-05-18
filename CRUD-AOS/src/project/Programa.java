@@ -4,6 +4,8 @@ import DAOs.Cidadaos;
 import DBOs.Cidadao;
 import project.helpers.Teclado;
 
+import java.util.List;
+
 public class Programa {
     public static void main(String[] args) {
 
@@ -54,13 +56,17 @@ public class Programa {
             try {
                 System.out.println("\n Deseja fazer uma consulta nos dados de todos os cidadaos cadastrados? [S] Sim ou [N] Não: ");
 
+                List<Cidadao> cidadaoList;
+
                 if (Character.toUpperCase(opcao) == 'S') {
 
-                   // MEU DEUS EU NÃO SEI COMO FAZER O READALL
+                   cidadaoList = Cidadaos.readAll();
+
                     System.out.println("Lista dos dados cadastrados: ");
 
-                    //cidadao = new Cidadao(Cidadaos.readAll());
-
+                    for (Cidadao c : cidadaoList) {
+                        System.out.println(c.toString());
+                    }
                 }
                 else{
                     System.out.println("Digite o CPF do cidadao que deseja consultar: ");

@@ -5,6 +5,8 @@ import bd.BDSQLServer;
 import bd.core.MeuResultSet;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cidadaos {
 
@@ -96,9 +98,13 @@ public class Cidadaos {
         return cidadao;
     }
 
-    public static MeuResultSet readAll() throws Exception{
+    public static List<Cidadao> readAll() throws Exception{
 
-        MeuResultSet ret = null;
+        MeuResultSet meuResultSet = null;
+        List<Cidadao> cidadaoList = new ArrayList<Cidadao>();
+        Cidadao cidadao = null;
+        String cpf, nome, telefone, complemento;
+        int numeroCasa, cep;
 
         try{
             String sql;
@@ -107,11 +113,25 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.prepareStatement(sql);
 
-            ret = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+            meuResultSet = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+
+            while (meuResultSet.next()){
+
+                cpf = meuResultSet.getString("cid_cpf");
+                nome = meuResultSet.getString("cid_nome");
+                telefone = meuResultSet.getString("cid_telefone");
+                numeroCasa = meuResultSet.getInt("cid_numeroDaCasa");
+                complemento = meuResultSet.getString("cid_complemento");
+                cep = meuResultSet.getInt("cid_cep");
+
+                cidadao = new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep);
+
+                cidadaoList.add(cidadao);
+            }
         } catch(SQLException err){
             throw new Exception("erro ao ler os dados dos cidadaos");
         }
-        return ret;
+        return cidadaoList;
     }
 
     public static void update(Cidadao cidadao) throws Exception{
