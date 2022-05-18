@@ -10,9 +10,9 @@ public class Programa {
         String nome;
         String telefone;
 
-        System.out.println("CRUD AOS - Java + SQL Server");
+        System.out.println("CRUD AOS - Java + SQL Server \n");
 
-        System.out.println("qual operacao deseja realizar?");
+        System.out.println("qual operacao deseja realizar? \n");
         System.out.println("digite [C] para cadastrar alguma dados\n");
         System.out.println("digite [R] para ler dados cadastrados\n");
         System.out.println("digite [U] para atualizar dados\n");

@@ -1,6 +1,6 @@
 package project.helpers;
 
-public class Telefone implements Cloneable {
+public class Telefone implements Cloneable { // essa classe nao foi utilizada na versao final do projeto
 
     private final int ddd;
     private final long numero;
