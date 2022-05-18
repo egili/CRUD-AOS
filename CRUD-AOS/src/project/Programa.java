@@ -12,8 +12,8 @@ public class Programa {
         String cpf;
         String nome;
         String telefone;
-        String cep;
-        String numero;
+        int cep;
+        int numero;
         String complemento;
 
         System.out.println("CRUD AOS - Java + SQL Server \n");
@@ -40,10 +40,10 @@ public class Programa {
                 telefone = Teclado.getUmString();
 
                 System.out.println("digite o CEP do cidadao: ");
-                cep = Teclado.getUmString();
+                cep = Teclado.getUmInt();
 
                 System.out.println("digite o numero da casa do cidadao: ");
-                numero = Teclado.getUmString();
+                numero = Teclado.getUmInt();
 
                 System.out.println("digite o complemento do cidadao: ");
                 complemento = Teclado.getUmString();
@@ -61,8 +61,8 @@ public class Programa {
                     cpf = Teclado.getUmString();
                     nome = Teclado.getUmString();
                     telefone = Teclado.getUmString();
-                    cep = Teclado.getUmString();
-                    numero = Teclado.getUmString();
+                    cep = Teclado.getUmInt();
+                    numero = Teclado.getUmInt();
                     complemento = Teclado.getUmString();
                     System.out.println(cpf);
                     System.out.println(nome);
@@ -107,8 +107,8 @@ public class Programa {
                 cpf = Teclado.getUmString();
                 nome = Teclado.getUmString();
                 telefone = Teclado.getUmString();
-                cep = Teclado.getUmString();
-                numero = Teclado.getUmString();
+                cep = Teclado.getUmInt();
+                numero = Teclado.getUmInt();
                 complemento = Teclado.getUmString();
 
                 System.out.println("Digite a nova informação: ");
@@ -121,7 +121,7 @@ public class Programa {
             }
 
         } else if (Character.toUpperCase(opcao) == 'D') {
-
+            try {
                 System.out.println("Digite o CPF do cidadão que deseja deletar os dados: ");
                 cpf = Teclado.getUmString();
 
@@ -129,12 +129,14 @@ public class Programa {
                 cpf = Teclado.getUmString();
                 nome = Teclado.getUmString();
                 telefone = Teclado.getUmString();
-                cep = Teclado.getUmString();
-                numero = Teclado.getUmString();
+                cep = Teclado.getUmInt();
+                numero = Teclado.getUmInt();
                 complemento = Teclado.getUmString();
 
                 /* Vai ser feita a exclusão do dado selecionado */
-
+            }catch (Exception e){
+            e.printStackTrace();
+            }
         } else {
 
         }
