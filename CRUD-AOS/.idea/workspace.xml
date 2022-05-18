@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="a" />
+    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="a">
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuPreparedStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuResultSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/core/MeuStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Teclado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/resources/Script_Banco.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/resources/jackson-all-1.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/resources/sqljdbc4.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
