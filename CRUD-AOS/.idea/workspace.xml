@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/CidadaoHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="a" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +54,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.project.helpers.test">
+  <component name="RunManager" selected="Application.Programa">
+    <configuration name="Programa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.Programa" />
+      <module name="CRUD-AOS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="project.helpers.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.helpers.test" />
       <module name="CRUD-AOS" />
@@ -93,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Programa" />
         <item itemvalue="Application.project.helpers.test" />
         <item itemvalue="Application.test" />
       </list>
@@ -107,6 +111,14 @@
       <option name="presentableId" value="Default" />
       <updated>1652483998528</updated>
     </task>
+    <task id="LOCAL-00001" summary="a">
+      <created>1652835663563</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652835663563</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +134,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

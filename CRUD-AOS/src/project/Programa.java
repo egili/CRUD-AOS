@@ -1,52 +1,54 @@
 package project;
 
-import DAOs.CRUDHelper;
-import bd.BDSQLServer;
-import bd.core.MeuResultSet;
+import DAOs.Cidadaos;
+import DBOs.Cidadao;
 import project.helpers.Teclado;
+import project.template.ClienteWS;
+import project.template.Logradouro;
+
+import java.util.List;
 
 public class Programa {
     public static void main(String[] args) {
 
         char opcao = 0;
-        String cpf;
-        String nome;
-        String telefone;
-        int cep;
-        int numero;
-        String complemento;
+        String cpf , nome, telefone, complemento;
+        int cep, numeroCasa;
+        Cidadao cidadao = null;
 
         System.out.println("CRUD AOS - Java + SQL Server \n");
 
         System.out.println("qual operacao deseja realizar? \n");
-        System.out.println("digite [C] para cadastrar alguma dados\n");
+        System.out.println("digite [C] para cadastrar dados\n");
         System.out.println("digite [R] para ler dados cadastrados\n");
         System.out.println("digite [U] para atualizar dados\n");
         System.out.println("digite [D] para deletar algum dado\n");
 
         try{
             opcao = Teclado.getUmChar();
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
 
         if(Character.toUpperCase(opcao) == 'C'){
             try{
-                System.out.println("digite o CPF do cidadao: " );
+                System.out.println("digite o CPF do cidadao: ");
                 cpf = Teclado.getUmString();
 
-                System.out.println("digite o nome do cidadao: ");
+                System.out.println("\n digite o nome do cidadao: ");
                 nome = Teclado.getUmString();
 
-                System.out.println("digite o telefone do cidadao: ");
+                System.out.println("\n digite o telefone do cidadao: ");
                 telefone = Teclado.getUmString();
 
-                System.out.println("digite o CEP do cidadao: ");
+                System.out.println("\n digite o numero da casa do cidadao: ");
+                numeroCasa = Teclado.getUmInt();
+
+                System.out.println("\n digite o complemento da casa do cidadao: ");
+                complemento = Teclado.getUmString();
+
+                System.out.println("\n digite o CEP do cidadao: \n");
                 cep = Teclado.getUmInt();
 
-                System.out.println("digite o numero da casa do cidadao: ");
-                numero = Teclado.getUmInt();
-
-                System.out.println("digite o complemento do cidadao: ");
-                complemento = Teclado.getUmString();
+                Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -54,91 +56,97 @@ public class Programa {
 
         } else if (Character.toUpperCase(opcao) == 'R') {
             try {
-                System.out.println("Deseja fazer uma consulta nos dados cadastrados? [S] Sim ou [N] Não: ");
+                System.out.println("\n Deseja fazer uma consulta nos dados de todos os cidadaos cadastrados? [S] Sim ou [N] Nao: ");
+                opcao = Teclado.getUmChar();
+
+                List<Cidadao> cidadaoList;
 
                 if (Character.toUpperCase(opcao) == 'S') {
-                    System.out.println("Lista dos dados cadastrados: ");
-                    cpf = Teclado.getUmString();
-                    nome = Teclado.getUmString();
-                    telefone = Teclado.getUmString();
-                    cep = Teclado.getUmInt();
-                    numero = Teclado.getUmInt();
-                    complemento = Teclado.getUmString();
-                    System.out.println(cpf);
-                    System.out.println(nome);
-                    System.out.println(telefone);
-                    System.out.println(cep);
-                    System.out.println(numero);
-                    System.out.println(complemento);
-                /* Aqui é apenas um esboço dos dados que serão retornados,
-                 já que é necessário retirar esses
-                  dados do banco de dados */
-                }
 
+                   cidadaoList = Cidadaos.readAll();
+
+                    System.out.println("Lista dos dados cadastrados: ");
+
+                    for (Cidadao c : cidadaoList) {
+                        System.out.println(c.toString());
+                    }
+                }
                 else{
                     System.out.println("Digite o CPF do cidadao que deseja consultar: ");
 
+                    try {
+                        cpf = Teclado.getUmString();
 
-                    /* Aqui vai retornar os dados apenas do cidadao que foi
-                    digitado o cpf
+                        cidadao = Cidadaos.read(cpf);
 
-                 MeuResultSet resultado = (MeuResultSet) BDSQLServer.COMANDO.executeQuery();
-                 resultado.getString("cid_nome"),
-                 resultado.getInt(CRUDHelper.getDDDdoCidadao("cid_telefone")),
-                 resultado.getLong(CRUDHelper.getNumerodoCidadao("cid_telefone")),
-                 resultado.getString(CRUDHelper.getGeneroAsCharSize("cid_genero")),
-                 resultado.getInt("cid_cep"));
-                    */
+                        System.out.println("\n nome do cidadao: " + cidadao.getNome());
+                        System.out.println("\n telefone do cidadao: " + cidadao.getTelefone());
+                        System.out.println("\n numero da casa do cidadao: " + cidadao.getNumeroCasa());
+                        System.out.println("\n complemento da casa do cidadao: " + cidadao.getComplemento());
+                        System.out.println("\n numero do CEP do cidadao: " + cidadao.getCEP());
 
+                        System.out.println("\n agora os dados do endereco deste cidadao: \n");
+                        Logradouro logradouro = (Logradouro) ClienteWS.getObjeto(Logradouro.class, "https://api.postmon.com.br/v1/cep", String.valueOf(cidadao.getCEP()));
+                        System.out.println(logradouro);
+
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        e.getMessage();
+                    }
                 }
             }catch (Exception e){
-             e.printStackTrace();
+                e.printStackTrace();
+                e.getMessage();
             }
 
         } else if (Character.toUpperCase(opcao) == 'U') {
             try {
-                System.out.println("Digite o CPF do cidadao que deseja atualizar os dados: ");
+                System.out.println("Digite os dados que deseja atualizar \n");
+                do{
+                    System.out.println("digite o cpf do cidadao a atualizar:");
+                    cpf = Teclado.getUmString();
 
-                /* Aqui vai mostrar os dados do cidadão escolhido */
+                }while(!Cidadaos.cadastrado(cpf));
 
-                System.out.println("Qual informação deseja alterar?: ");
-
-                /* Vai escolher a informação */
-                cpf = Teclado.getUmString();
+                System.out.println("\n digite o nome do cidadao a atualizar: ");
                 nome = Teclado.getUmString();
+
+                System.out.println("\n digite o telefone do cidadao a atualizar: ");
                 telefone = Teclado.getUmString();
-                cep = Teclado.getUmInt();
-                numero = Teclado.getUmInt();
+
+                System.out.println("\n digite o numeroCasa da casa do cidadao a atualizar: ");
+                numeroCasa = Teclado.getUmInt();
+
+                System.out.println("\n digite o complemento do cidadao a atualizar: ");
                 complemento = Teclado.getUmString();
 
-                System.out.println("Digite a nova informação: ");
+                System.out.println("\n digite o CEP do cidadao a atualizar: ");
+                cep = Teclado.getUmInt();
 
-            /* Vai ser feita a alteração da informação
-             e depois basta fazer a consulta para verificar a alteração */
+                Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
 
             }catch (Exception e){
              e.printStackTrace();
             }
 
         } else if (Character.toUpperCase(opcao) == 'D') {
+
             try {
-                System.out.println("Digite o CPF do cidadão que deseja deletar os dados: ");
-                cpf = Teclado.getUmString();
+                do {
+                    System.out.println("digite o cpf do cidadao a ser deletado:");
+                    cpf = Teclado.getUmString();
 
-                System.out.println("Selecione o dado que deseja deletar: ");
-                cpf = Teclado.getUmString();
-                nome = Teclado.getUmString();
-                telefone = Teclado.getUmString();
-                cep = Teclado.getUmInt();
-                numero = Teclado.getUmInt();
-                complemento = Teclado.getUmString();
+                } while (!Cidadaos.cadastrado(cpf));
 
-                /* Vai ser feita a exclusão do dado selecionado */
+                Cidadaos.delete(cpf);
+
             }catch (Exception e){
-            e.printStackTrace();
+                e.getMessage();
+                e.printStackTrace();
             }
         } else {
-
+            System.out.println("opcao invalida");
+            System.exit(0);
         }
     }
 }
