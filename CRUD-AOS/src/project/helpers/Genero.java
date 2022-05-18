@@ -2,7 +2,7 @@ package project.helpers;
 
 import java.util.Objects;
 
-public class Genero implements Cloneable {
+public class Genero implements Cloneable { // essa classe nao foi utilizada na versao final do projeto
 
     private String genero;
 

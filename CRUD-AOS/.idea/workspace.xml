@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4498699b-b918-4ccb-ab61-043429405dec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/Programa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/Cidadaos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DAOs/CRUDHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/Cidadao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBOs/Cidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBOs/Cidadao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/DBOs/CidadaoHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/bd/BDSQLServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Genero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRUD-AOS/project/helpers/Telefone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/CidadaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/GeneroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/tests/TelefoneTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,21 +122,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/DAOs/Cidadaos.java</url>
-          <line>42</line>
-          <properties class="DAOs.Cidadaos" method="read">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

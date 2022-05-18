@@ -1,7 +1,6 @@
 package bd;
 
-import bd.core.*;
-import DAOs.*;
+import bd.core.MeuPreparedStatement;
 
 public class BDSQLServer
 {
@@ -23,7 +22,7 @@ public class BDSQLServer
         catch (Exception erro)
         {
             System.err.println ("Problemas de conexao com o BD");
-            System.exit(0); // aborta o programa
+            System.exit(0);
         }
 
         COMANDO = comando;

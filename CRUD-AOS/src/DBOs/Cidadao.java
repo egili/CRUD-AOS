@@ -1,24 +1,20 @@
 package DBOs;
 
-import project.helpers.Genero;
-import project.helpers.Telefone;
-import java.util.Objects;
-
 public class Cidadao implements Cloneable {
 
     private String CPF;
     private String nome;
     private String telefone;
-    private String genero;
+    private int numeroCasa;
+    private String complemento;
     private int CEP;
-    private int numero;
-    private int complemento;
 
-    public Cidadao(String cpf, String nome, int ddd, long numero, String genero, int cep) throws Exception {
+    public Cidadao(String cpf, String nome, String numeroComDDD,int numeroCasa, String complemento, int cep) throws Exception {
         setCPF(cpf);
         setNome(nome);
-        setTelefone(ddd, numero);
-        setGenero(genero);
+        setTelefone(numeroComDDD);
+        setNumeroCasa(numeroCasa);
+        setComplemento(complemento);
         setCEP(cep);
     }
 
@@ -29,20 +25,21 @@ public class Cidadao implements Cloneable {
 
         setCPF(c.CPF);
         setNome(c.nome);
-        this.telefone = new Telefone(c.telefone);
-        this.genero = new Genero(c.genero);
+        setTelefone(c.telefone);
+        setNumeroCasa(c.numeroCasa);
+        setComplemento(c.complemento);
         setCEP(c.CEP);
     }
 
     public void setCPF(String cpf) throws Exception {
 
-        if (cpf < 0)
-            throw new Exception("o CPF precisa ter o valor de um numero positivo");
+        if (cpf == null)
+            throw new Exception("o CPF precisa ter valor");
 
         CPF = cpf;
     }
 
-    public long getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
@@ -57,20 +54,32 @@ public class Cidadao implements Cloneable {
         return nome;
     }
 
-    public void setTelefone(int ddd, long numero) throws Exception {
-        this.telefone = new Telefone(ddd, numero);
+    public void setTelefone(String numeroComDDD) throws Exception {
+
+        if(numeroComDDD.length() > 11)
+            throw new Exception("o numero de telefone com o ddd nao pode ultrapassar 11 digitos");
+
+        telefone = numeroComDDD;
     }
 
     public String getTelefone() {
-        return telefone.getTelefone();
+        return telefone;
     }
 
-    public void setGenero(String genero) throws Exception {
-        this.genero = new Genero(genero);
+    public void setNumeroCasa(int numeroCasa) throws Exception{
+        if(numeroCasa < 0)
+            throw new Exception("nao existe numero de cada que seja negativo");
+        this.numeroCasa = numeroCasa;
+    }
+    public int getNumeroCasa() {
+        return numeroCasa;
     }
 
-    public Genero getGenero() {
-        return genero;
+    public void setComplemento(String complemento) { // nao lanca excecao pois o complemento nao eh not null no bd
+        this.complemento = complemento;
+    }
+    public String getComplemento() {
+        return complemento;
     }
 
     public void setCEP(int cep) throws Exception {
@@ -83,11 +92,10 @@ public class Cidadao implements Cloneable {
     public int getCEP() {
         return CEP;
     }
-
-
+    
     @Override
     public String toString() {
-        return "Nome: " + getNome() + "\n CPF: " + getCPF() + " \n telefone: " + getTelefone() + "\n CEP: " + getCEP() + "\n genero: " + getGenero();
+        return "Nome: " + getNome() + "\n CPF: " + getCPF() + " \n telefone: " + getTelefone() + "\n numero da casa: " + getNumeroCasa() + "\n complemento: " + getComplemento() + "\n CEP: " + getCEP();
     }
 
     @Override
@@ -100,27 +108,32 @@ public class Cidadao implements Cloneable {
 
         Cidadao cidadao = (Cidadao) obj;
 
-        if (this.CPF != cidadao.CPF)
+        if (!this.CPF.equals(cidadao.CPF))
             return false;
-        if (!Objects.equals(this.nome, cidadao.nome))
+        if (!this.nome.equals(cidadao.nome))
             return false;
-        if (this.telefone != cidadao.telefone)
+        if (!this.telefone.equals(cidadao.telefone))
+            return false;
+        if (this.numeroCasa != cidadao.numeroCasa)
+            return false;
+        if (!this.complemento.equals(cidadao.complemento))
             return false;
         if (this.CEP != cidadao.CEP)
             return false;
 
-        return this.genero == cidadao.genero;
+        return true;
     }
 
     @Override
     public int hashCode() {
 
         int ret = 31;
-        ret = ret * 13 + Long.valueOf(CPF).hashCode();
+        ret = ret * 13 + String.valueOf(CPF).hashCode();
         ret = ret * 13 + String.valueOf(nome).hashCode();
-        ret = ret * 13 + telefone.hashCode();
+        ret = ret * 13 + String.valueOf(telefone).hashCode();
+        ret = ret * 13 + Integer.valueOf(numeroCasa).hashCode();
+        ret = ret * 13 + String.valueOf(complemento).hashCode();
         ret = ret * 13 + Integer.valueOf(CEP).hashCode();
-        ret = ret * 13 + genero.hashCode();
 
         return ret < 0 ? -ret : ret;
     }
