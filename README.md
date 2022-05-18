@@ -1,6 +1,6 @@
 <h1> CRUD em BD - Java + SQL Server ☕ </h1>
 
-Trabalho de Arquitetura Orientada a Serviços, do COTUCA
+Trabalho de Arquitetura Orientada a Serviços do COTUCA
 
 <hr/>
 <h3>Autores:</h3>
