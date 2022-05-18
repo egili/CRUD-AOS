@@ -3,7 +3,6 @@ package DAOs;
 import DBOs.Cidadao;
 import bd.BDSQLServer;
 import bd.core.MeuResultSet;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +92,7 @@ public class Cidadaos {
                     resultado.getInt("cid_cep"));
 
         } catch (SQLException erro){
+            BDSQLServer.COMANDO.rollback();
             throw new Exception("erro ao procurar o cidadao");
         }
         return cidadao;
@@ -129,6 +129,7 @@ public class Cidadaos {
                 cidadaoList.add(cidadao);
             }
         } catch(SQLException err){
+            BDSQLServer.COMANDO.rollback();
             throw new Exception("erro ao ler os dados dos cidadaos");
         }
         return cidadaoList;

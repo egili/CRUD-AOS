@@ -3,6 +3,8 @@ package project;
 import DAOs.Cidadaos;
 import DBOs.Cidadao;
 import project.helpers.Teclado;
+import project.template.ClienteWS;
+import project.template.Logradouro;
 
 import java.util.List;
 
@@ -28,22 +30,22 @@ public class Programa {
 
         if(Character.toUpperCase(opcao) == 'C'){
             try{
-                System.out.println("digite o CPF do cidadao: " );
+                System.out.println("digite o CPF do cidadao: ");
                 cpf = Teclado.getUmString();
 
-                System.out.println("digite o nome do cidadao: ");
+                System.out.println("\n digite o nome do cidadao: ");
                 nome = Teclado.getUmString();
 
-                System.out.println("digite o telefone do cidadao: ");
+                System.out.println("\n digite o telefone do cidadao: ");
                 telefone = Teclado.getUmString();
 
-                System.out.println("digite o numeroCasa da casa do cidadao: ");
+                System.out.println("\n digite o numero da casa do cidadao: ");
                 numeroCasa = Teclado.getUmInt();
 
-                System.out.println("digite o complemento do cidadao: ");
+                System.out.println("\n digite o complemento da casa do cidadao: ");
                 complemento = Teclado.getUmString();
 
-                System.out.println("digite o CEP do cidadao: ");
+                System.out.println("\n digite o CEP do cidadao: \n");
                 cep = Teclado.getUmInt();
 
                 Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
@@ -54,7 +56,8 @@ public class Programa {
 
         } else if (Character.toUpperCase(opcao) == 'R') {
             try {
-                System.out.println("\n Deseja fazer uma consulta nos dados de todos os cidadaos cadastrados? [S] Sim ou [N] Não: ");
+                System.out.println("\n Deseja fazer uma consulta nos dados de todos os cidadaos cadastrados? [S] Sim ou [N] Nao: ");
+                opcao = Teclado.getUmChar();
 
                 List<Cidadao> cidadaoList;
 
@@ -82,6 +85,10 @@ public class Programa {
                         System.out.println("\n complemento da casa do cidadao: " + cidadao.getComplemento());
                         System.out.println("\n numero do CEP do cidadao: " + cidadao.getCEP());
 
+                        System.out.println("\n agora os dados do endereco deste cidadao: \n");
+                        Logradouro logradouro = (Logradouro) ClienteWS.getObjeto(Logradouro.class, "https://api.postmon.com.br/v1/cep", String.valueOf(cidadao.getCEP()));
+                        System.out.println(logradouro);
+
                     }catch (Exception e){
                         e.printStackTrace();
                         e.getMessage();
@@ -101,23 +108,22 @@ public class Programa {
 
                 }while(!Cidadaos.cadastrado(cpf));
 
-                System.out.println("digite o nome do cidadao a atualizar: ");
+                System.out.println("\n digite o nome do cidadao a atualizar: ");
                 nome = Teclado.getUmString();
 
-                System.out.println("digite o telefone do cidadao a atualizar: ");
+                System.out.println("\n digite o telefone do cidadao a atualizar: ");
                 telefone = Teclado.getUmString();
 
-                System.out.println("digite o numeroCasa da casa do cidadao a atualizar: ");
+                System.out.println("\n digite o numeroCasa da casa do cidadao a atualizar: ");
                 numeroCasa = Teclado.getUmInt();
 
-                System.out.println("digite o complemento do cidadao a atualizar: ");
+                System.out.println("\n digite o complemento do cidadao a atualizar: ");
                 complemento = Teclado.getUmString();
 
-                System.out.println("digite o CEP do cidadao a atualizar: ");
+                System.out.println("\n digite o CEP do cidadao a atualizar: ");
                 cep = Teclado.getUmInt();
 
                 Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
-
 
             }catch (Exception e){
              e.printStackTrace();
