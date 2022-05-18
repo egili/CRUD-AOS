@@ -1,4 +1,4 @@
-package project.template;
+//package project.template;
 //
 //import java.io.BufferedReader;
 //import java.io.DataOutputStream;
@@ -12,10 +12,10 @@ package project.template;
 //import java.net.HttpURLConnection;
 //import java.net.URL;
 //
-///*import org.codehaus.jackson.JsonFactory;
+//import org.codehaus.jackson.JsonFactory;
 //import org.codehaus.jackson.JsonParser;
 //import org.codehaus.jackson.map.MappingJsonFactory;
-//import org.codehaus.jackson.map.ObjectMapper;*/
+//import org.codehaus.jackson.map.ObjectMapper;
 //
 //public class ClienteWS
 //{
@@ -27,10 +27,10 @@ package project.template;
 //
 //        try
 //        {
-//            /*
+//
 //            for (int i=0; i<parametros.length; i++)
 //                urlWebService = urlWebService + "/" + parametros[i].replaceAll(" ", "%20");
-//            */
+//
 //            for (String parametro : parametros)
 //                urlWebService = urlWebService + "/" + parametro.replaceAll(" ", "%20");
 //
@@ -39,8 +39,8 @@ package project.template;
 //                    (HttpURLConnection) url.openConnection();
 //            connection.setRequestMethod("GET");
 //            connection.setConnectTimeout(15000);
-//            //connection.setRequestProperty("login", "seulogin");
-//            //connection.setRequestProperty("password", "suasenha");
+//            connection.setRequestProperty("login", "seulogin");
+//            connection.setRequestProperty("password", "suasenha");
 //            connection.connect();
 //
 //            String responseJson = inputStreamToString(connection.getInputStream());
@@ -73,8 +73,8 @@ package project.template;
 //            connection.setDoOutput(true);
 //            connection.setUseCaches(false);
 //            connection.setConnectTimeout(15000);
-//            //connection.setRequestProperty("login", "seulogin");
-//            //connection.setRequestProperty("senha", "suasenha");
+//            connection.setRequestProperty("login", "seulogin");
+//            connection.setRequestProperty("senha", "suasenha");
 //            connection.setRequestProperty("Content-Type", "application/json");
 //            connection.setRequestProperty("Accept", "application/json");
 //            connection.setRequestProperty("Content-Length", Integer.toString(requestJson.length()));

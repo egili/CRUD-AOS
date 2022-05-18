@@ -19,9 +19,9 @@ public class Programa {
         System.out.println("CRUD AOS - Java + SQL Server \n");
 
         System.out.println("qual operacao deseja realizar? \n");
-        System.out.println("digite [C] para cadastrar alguma dados\n");
-        System.out.println("digite [R] para ler dados cadastrados\n");
-        System.out.println("digite [U] para atualizar dados\n");
+        System.out.println("digite [C] para cadastrar alguns dados\n");
+        System.out.println("digite [R] para ler os dados cadastrados\n");
+        System.out.println("digite [U] para atualizar os dados\n");
         System.out.println("digite [D] para deletar algum dado\n");
 
         try{
@@ -30,22 +30,22 @@ public class Programa {
 
         if(Character.toUpperCase(opcao) == 'C'){
             try{
-                System.out.println("digite o CPF do cidadao: " );
+                System.out.println("digite o CPF do cidadão: " );
                 cpf = Teclado.getUmString();
 
-                System.out.println("digite o nome do cidadao: ");
+                System.out.println("digite o nome do cidadão: ");
                 nome = Teclado.getUmString();
 
-                System.out.println("digite o telefone do cidadao: ");
+                System.out.println("digite o telefone do cidadão: ");
                 telefone = Teclado.getUmString();
 
-                System.out.println("digite o CEP do cidadao: ");
+                System.out.println("digite o CEP do cidadão: ");
                 cep = Teclado.getUmString();
 
-                System.out.println("digite o numero da casa do cidadao: ");
+                System.out.println("digite o número da casa do cidadão: ");
                 numero = Teclado.getUmString();
 
-                System.out.println("digite o complemento do cidadao: ");
+                System.out.println("digite o complemento do cidadão: ");
                 complemento = Teclado.getUmString();
 
             }catch (Exception e){
@@ -76,7 +76,7 @@ public class Programa {
                 }
 
                 else{
-                    System.out.println("Digite o CPF do cidadao que deseja consultar: ");
+                    System.out.println("Digite o CPF do cidadão que deseja consultar: ");
 
 
                     /* Aqui vai retornar os dados apenas do cidadao que foi
@@ -97,7 +97,7 @@ public class Programa {
 
         } else if (Character.toUpperCase(opcao) == 'U') {
             try {
-                System.out.println("Digite o CPF do cidadao que deseja atualizar os dados: ");
+                System.out.println("Digite o CPF do cidadão que deseja atualizar os dados: ");
 
                 /* Aqui vai mostrar os dados do cidadão escolhido */
 
