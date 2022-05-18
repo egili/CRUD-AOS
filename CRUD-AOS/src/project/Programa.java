@@ -44,8 +44,7 @@ public class Programa {
                 System.out.println("digite o CEP do cidadao: ");
                 cep = Teclado.getUmInt();
 
-                cidadao = new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep);
-                Cidadaos.create(cidadao);
+                Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -77,21 +76,25 @@ public class Programa {
                 else{
                     System.out.println("Digite o CPF do cidadao que deseja consultar: ");
 
+                    try {
+                        cpf = Teclado.getUmString();
 
-                    /* Aqui vai retornar os dados apenas do cidadao que foi
-                    digitado o cpf
+                        cidadao = Cidadaos.read(cpf);
 
-                 MeuResultSet resultado = (MeuResultSet) BDSQLServer.COMANDO.executeQuery();
-                 resultado.getString("cid_nome"),
-                 resultado.getInt(CRUDHelper.getDDDdoCidadao("cid_telefone")),
-                 resultado.getLong(CRUDHelper.getNumerodoCidadao("cid_telefone")),
-                 resultado.getString(CRUDHelper.getGeneroAsCharSize("cid_genero")),
-                 resultado.getInt("cid_cep"));
-                    */
+                        System.out.println("\n nome do cidadao: " + cidadao.getNome());
+                        System.out.println("\n telefone do cidadao: " + cidadao.getTelefone());
+                        System.out.println("\n numero da casa do cidadao: " + cidadao.getNumeroCasa());
+                        System.out.println("\n complemento da casa do cidadao: " + cidadao.getComplemento());
+                        System.out.println("\n numero do CEP do cidadao: " + cidadao.getCEP());
 
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        e.getMessage();
+                    }
                 }
             }catch (Exception e){
-             e.printStackTrace();
+                e.printStackTrace();
+                e.getMessage();
             }
 
         } else if (Character.toUpperCase(opcao) == 'U') {
@@ -135,7 +138,8 @@ public class Programa {
                 /* Vai ser feita a exclusão do dado selecionado */
 
         } else {
-
+            System.out.println("opcao invalida");
+            System.exit(0);
         }
     }
 }
