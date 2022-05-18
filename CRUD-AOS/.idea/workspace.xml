@@ -57,7 +57,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.project.helpers.test">
+  <component name="RunManager" selected="Application.Programa">
+    <configuration name="Programa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.Programa" />
+      <module name="CRUD-AOS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="project.helpers.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.helpers.test" />
       <module name="CRUD-AOS" />
@@ -86,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Programa" />
         <item itemvalue="Application.project.helpers.test" />
         <item itemvalue="Application.test" />
       </list>

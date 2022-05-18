@@ -68,11 +68,7 @@ public class Programa {
                     System.out.println(cep);
                     System.out.println(numeroCasa);
                     System.out.println(complemento);
-                /* Aqui é apenas um esboço dos dados que serão retornados,
-                 já que é necessário retirar esses
-                  dados do banco de dados */
                 }
-
                 else{
                     System.out.println("Digite o CPF do cidadao que deseja consultar: ");
 
@@ -99,24 +95,30 @@ public class Programa {
 
         } else if (Character.toUpperCase(opcao) == 'U') {
             try {
-                System.out.println("Digite o CPF do cidadao que deseja atualizar os dados: ");
+                System.out.println("Digite os dados que deseja atualizar \n");
+                do{
+                    System.out.println("digite o cpf do cidadao a atualizar:");
+                    cpf = Teclado.getUmString();
 
-                /* Aqui vai mostrar os dados do cidadão escolhido */
+                }while(!Cidadaos.cadastrado(cpf));
 
-                System.out.println("Qual informação deseja alterar?: ");
-
-                /* Vai escolher a informação */
-                cpf = Teclado.getUmString();
+                System.out.println("digite o nome do cidadao a atualizar: ");
                 nome = Teclado.getUmString();
+
+                System.out.println("digite o telefone do cidadao a atualizar: ");
                 telefone = Teclado.getUmString();
-                cep = Teclado.getUmString();
-                numeroCasa = Teclado.getUmString();
+
+                System.out.println("digite o numeroCasa da casa do cidadao a atualizar: ");
+                numeroCasa = Teclado.getUmInt();
+
+                System.out.println("digite o complemento do cidadao a atualizar: ");
                 complemento = Teclado.getUmString();
 
-                System.out.println("Digite a nova informação: ");
+                System.out.println("digite o CEP do cidadao a atualizar: ");
+                cep = Teclado.getUmInt();
 
-            /* Vai ser feita a alteração da informação
-             e depois basta fazer a consulta para verificar a alteração */
+                Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+
 
             }catch (Exception e){
              e.printStackTrace();
@@ -124,19 +126,19 @@ public class Programa {
 
         } else if (Character.toUpperCase(opcao) == 'D') {
 
-                System.out.println("Digite o CPF do cidadao que deseja deletar: ");
-                cpf = Teclado.getUmString();
+            try {
+                do {
+                    System.out.println("digite o cpf do cidadao a ser deletado:");
+                    cpf = Teclado.getUmString();
 
-                System.out.println("Selecione o dado que deseja deletar: ");
-                cpf = Teclado.getUmString();
-                nome = Teclado.getUmString();
-                telefone = Teclado.getUmString();
-                cep = Teclado.getUmString();
-                numeroCasa = Teclado.getUmString();
-                complemento = Teclado.getUmString();
+                } while (!Cidadaos.cadastrado(cpf));
 
-                /* Vai ser feita a exclusão do dado selecionado */
+                Cidadaos.delete(cpf);
 
+            }catch (Exception e){
+                e.getMessage();
+                e.printStackTrace();
+            }
         } else {
             System.out.println("opcao invalida");
             System.exit(0);
