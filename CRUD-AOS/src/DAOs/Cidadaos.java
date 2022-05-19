@@ -2,10 +2,11 @@ package DAOs;
 
 import DBOs.Cidadao;
 import bd.BDSQLServer;
-import bd.MeuResultSet;
+import bd.core.MeuResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Cidadaos {
 

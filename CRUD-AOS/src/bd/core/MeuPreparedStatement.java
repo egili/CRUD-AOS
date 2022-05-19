@@ -1,4 +1,4 @@
-package bd;
+package bd.core;
 
 import java.io.InputStream;
 import java.io.Reader;

@@ -1,5 +1,6 @@
 package bd;
-
+import bd.core.*;
+//import DAOs.* Não consigo fazer o import
 public class BDSQLServer
 {
     public static final MeuPreparedStatement COMANDO;
@@ -12,10 +13,9 @@ public class BDSQLServer
         {
             comando =
                     new MeuPreparedStatement (
-                            "com.microsoft.sqlserver.jdbc.SQLServerDriver", //especifica o driver
-                            "jdbc:sqlserver://192.168.15.26:1433;databasename=LAPTOP-7PBQ2CA8\\SQLEXPRESS",
+                            "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+                            "jdbc:sqlserver://192.168.15.26:1433;databasename=BancoAna",
                             "Proj.Mag", "Proj.Mag");
-            // tem que implementar a pasta core
         }
         catch (Exception erro)
         {
