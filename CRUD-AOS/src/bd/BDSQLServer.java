@@ -1,7 +1,5 @@
 package bd;
 
-import bd.core.MeuPreparedStatement;
-
 public class BDSQLServer
 {
     public static final MeuPreparedStatement COMANDO;

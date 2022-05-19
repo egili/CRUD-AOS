@@ -2,7 +2,7 @@ package DAOs;
 
 import DBOs.Cidadao;
 import bd.BDSQLServer;
-import bd.core.MeuResultSet;
+import bd.MeuResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
