@@ -7,7 +7,6 @@ public class Genero implements Cloneable { // essa classe nao foi utilizada na v
     private String genero;
 
     public Genero(String g) throws Exception {
-
         if (g == null)
             throw new Exception("Genero invalido");
         if(g.length() > 1)
@@ -16,25 +15,8 @@ public class Genero implements Cloneable { // essa classe nao foi utilizada na v
         setGenero(g);
     }
 
- /*   private String setGeneroOLD(Character c) throws Exception {
-        String ret = "";
-        var a = Character.toUpperCase(c);
-
-        if (a != 'M' || a != 'F' || a != 'O')
-            throw new Exception("Genero invalido");
-
-        if (a == 'M')
-            ret = "Masculino";
-        else if(a == 'F')
-            ret = "Feminino";
-        else if(a == 'O')
-            ret = "Outro";
-
-        return ret;
-    }*/
 
     public String setGenero(String generoDoCidadao) throws Exception{
-
     	if(generoDoCidadao == null) 
     		throw new Exception("o genero estava nulo");
     	
@@ -52,7 +34,6 @@ public class Genero implements Cloneable { // essa classe nao foi utilizada na v
     }
     @Override
     public boolean equals(Object obj) {
-
         if(this == obj)
             return true;
         if(obj == null)
@@ -66,7 +47,6 @@ public class Genero implements Cloneable { // essa classe nao foi utilizada na v
 
     @Override
     public int hashCode() {
-
         int ret = 31;
         ret = ret * 13 + genero.hashCode();
 

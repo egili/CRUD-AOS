@@ -32,7 +32,6 @@ public class Cidadao implements Cloneable {
     }
 
     public void setCPF(String cpf) throws Exception {
-
         if (cpf == null)
             throw new Exception("o CPF precisa ter valor");
 
@@ -55,7 +54,6 @@ public class Cidadao implements Cloneable {
     }
 
     public void setTelefone(String numeroComDDD) throws Exception {
-
         if(numeroComDDD.length() > 11)
             throw new Exception("o numero de telefone com o ddd nao pode ultrapassar 11 digitos");
 
@@ -100,7 +98,6 @@ public class Cidadao implements Cloneable {
 
     @Override
     public boolean equals(Object obj) {
-
         if (this == obj)
             return true;
         if (obj == null || obj.getClass() != Cidadao.class)
@@ -126,8 +123,7 @@ public class Cidadao implements Cloneable {
 
     @Override
     public int hashCode() {
-
-        int ret = 31;
+        var ret = 31;
         ret = ret * 13 + String.valueOf(CPF).hashCode();
         ret = ret * 13 + String.valueOf(nome).hashCode();
         ret = ret * 13 + String.valueOf(telefone).hashCode();
@@ -140,7 +136,6 @@ public class Cidadao implements Cloneable {
 
     @Override
     public Object clone() {
-
         Cidadao c = null;
 
         try {

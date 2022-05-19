@@ -10,8 +10,7 @@ import java.util.List;
 public class Cidadaos {
 
     public static boolean cadastrado(String cpf) throws Exception{
-
-        boolean ret = false;
+        var ret = false;
 
         try{
             String sql;
@@ -27,6 +26,7 @@ public class Cidadaos {
             MeuResultSet resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
 
             ret = resultado.first();
+
         } catch (SQLException err){
             throw new Exception("erro ao procurar cidadao");
         }
@@ -66,7 +66,6 @@ public class Cidadaos {
     }
 
     public static Cidadao read(String cpf) throws Exception{
-
         Cidadao cidadao = null;
 
         try {
@@ -99,7 +98,6 @@ public class Cidadaos {
     }
 
     public static List<Cidadao> readAll() throws Exception{
-
         MeuResultSet meuResultSet = null;
         List<Cidadao> cidadaoList = new ArrayList<Cidadao>();
         Cidadao cidadao = null;
@@ -130,17 +128,16 @@ public class Cidadaos {
             }
         } catch(SQLException err){
             BDSQLServer.COMANDO.rollback();
-            throw new Exception("erro ao ler os dados dos cidadaos");
+            throw new Exception("erro ao recuperar os dados dos cidadaos");
         }
         return cidadaoList;
     }
 
     public static void update(Cidadao cidadao) throws Exception{
-
         if(cidadao == null)
             throw new Exception("cidadao nao fornecido");
         if(!cadastrado(cidadao.getCPF()))
-            throw new Exception("nao cadastrado");
+            throw new Exception("cidadao nao cadastrado");
 
         try {
             String sql;
@@ -164,6 +161,7 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.executeUpdate();
             BDSQLServer.COMANDO.commit();
+
         } catch (SQLException err){
             BDSQLServer.COMANDO.rollback();
             throw new Exception("erro ao atualizar dados do cidadao");
@@ -171,7 +169,6 @@ public class Cidadaos {
     }
 
     public static void delete(String cpf) throws Exception{
-
         if(!cadastrado(cpf))
             throw new Exception("nao cadastrado");
 
@@ -187,6 +184,7 @@ public class Cidadaos {
 
             BDSQLServer.COMANDO.executeUpdate();
             BDSQLServer.COMANDO.commit();
+
         } catch (SQLException err){
             BDSQLServer.COMANDO.rollback();
             throw new Exception("erro ao deletar o cidadao");

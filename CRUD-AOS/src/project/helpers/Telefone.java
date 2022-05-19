@@ -6,7 +6,6 @@ public class Telefone implements Cloneable { // essa classe nao foi utilizada na
     private final long numero;
 
     public Telefone(int ddd, long numero) throws Exception {
-
         if (ddd < 0 || numero < 0)
             throw new Exception("os dados do telefone precisam ser numero maiores do que zero");
 
@@ -15,7 +14,6 @@ public class Telefone implements Cloneable { // essa classe nao foi utilizada na
     }
 
     public Telefone(Telefone t) throws Exception {
-
         if (t == null)
             throw new Exception("telefone inexistente");
 
@@ -34,7 +32,6 @@ public class Telefone implements Cloneable { // essa classe nao foi utilizada na
 
     @Override
     public boolean equals(Object obj) {
-
         if (this == obj)
             return true;
         if (obj == null || obj.getClass() != Telefone.class)
@@ -50,7 +47,6 @@ public class Telefone implements Cloneable { // essa classe nao foi utilizada na
 
     @Override
     public int hashCode() {
-
         int ret = 31;
         ret = ret * 13 + Integer.valueOf(this.ddd).hashCode();
         ret = ret * 13 + Long.valueOf(this.numero).hashCode();

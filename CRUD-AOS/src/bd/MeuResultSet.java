@@ -1,4 +1,4 @@
-package bd.core;
+package bd;
 
 import java.sql.Array;
 import java.sql.Blob;
@@ -15,14 +15,10 @@ import java.sql.SQLXML;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-
 import java.io.InputStream;
 import java.io.Reader;
-
 import java.math.BigDecimal;
-
 import java.net.URL;
-
 import java.util.Calendar;
 import java.util.Map;
 

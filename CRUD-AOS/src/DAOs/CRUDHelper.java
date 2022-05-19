@@ -3,7 +3,6 @@ package DAOs;
 public class CRUDHelper { // essa classe nao foi utilizada na versao final do projeto
 
     public static Integer getDDDdoCidadao(String telefone){
-
         String operacao;
         Integer ret = null;
 
@@ -17,7 +16,6 @@ public class CRUDHelper { // essa classe nao foi utilizada na versao final do pr
     }
 
     public static Integer getNumerodoCidadao(String telefone){
-
         String operacao;
         Integer ret = null;
 
@@ -31,7 +29,6 @@ public class CRUDHelper { // essa classe nao foi utilizada na versao final do pr
     }
 
     public static String getGeneroAsCharSize(String genero){
-
         String ret = null;
 
         try{
