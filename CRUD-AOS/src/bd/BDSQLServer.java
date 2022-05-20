@@ -1,6 +1,7 @@
 package bd;
+
 import bd.core.*;
-//import DAOs.* Não consigo fazer o import
+
 public class BDSQLServer
 {
     public static final MeuPreparedStatement COMANDO;
@@ -14,8 +15,9 @@ public class BDSQLServer
             comando =
                     new MeuPreparedStatement (
                             "com.microsoft.sqlserver.jdbc.SQLServerDriver",
-                            "jdbc:sqlserver://192.168.15.26:1433;databasename=BancoAna",
+                            "jdbc:sqlserver://127.0.0.1:1433;databasename=cidadaoBD",
                             "Proj.Mag", "Proj.Mag");
+            System.out.println("FUNCIONOU!!");
         }
         catch (Exception erro)
         {
