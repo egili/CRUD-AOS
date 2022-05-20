@@ -54,7 +54,7 @@ public class Cidadaos {
             BDSQLServer.COMANDO.setString(3, cidadao.getTelefone());
             BDSQLServer.COMANDO.setInt(4, cidadao.getNumeroCasa());
             BDSQLServer.COMANDO.setString(5, cidadao.getComplemento());
-            BDSQLServer.COMANDO.setInt(6, cidadao.getCEP());
+            BDSQLServer.COMANDO.setString(6, cidadao.getCEP());
 
             BDSQLServer.COMANDO.executeUpdate();
             BDSQLServer.COMANDO.commit();
@@ -89,7 +89,7 @@ public class Cidadaos {
                     resultado.getString("cid_telefone"),
                     resultado.getInt("cid_numeroDaCasa"),
                     resultado.getString("cid_complemento"),
-                    resultado.getInt("cid_cep"));
+                    resultado.getString("cid_cep"));
 
         } catch (SQLException erro){
             BDSQLServer.COMANDO.rollback();
@@ -102,8 +102,8 @@ public class Cidadaos {
         MeuResultSet meuResultSet = null;
         List<Cidadao> cidadaoList = new ArrayList<Cidadao>();
         Cidadao cidadao = null;
-        String cpf, nome, telefone, complemento;
-        int numeroCasa, cep;
+        String cpf, nome, telefone, complemento, cep;
+        int numeroCasa;
 
         try{
             String sql;
@@ -121,7 +121,7 @@ public class Cidadaos {
                 telefone = meuResultSet.getString("cid_telefone");
                 numeroCasa = meuResultSet.getInt("cid_numeroDaCasa");
                 complemento = meuResultSet.getString("cid_complemento");
-                cep = meuResultSet.getInt("cid_cep");
+                cep = meuResultSet.getString("cid_cep");
 
                 cidadao = new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep);
 
@@ -158,7 +158,7 @@ public class Cidadaos {
             BDSQLServer.COMANDO.setString(3, cidadao.getTelefone());
             BDSQLServer.COMANDO.setInt(4, cidadao.getNumeroCasa());
             BDSQLServer.COMANDO.setString(5, cidadao.getComplemento());
-            BDSQLServer.COMANDO.setInt(6, cidadao.getCEP());
+            BDSQLServer.COMANDO.setString(6, cidadao.getCEP());
 
             BDSQLServer.COMANDO.executeUpdate();
             BDSQLServer.COMANDO.commit();

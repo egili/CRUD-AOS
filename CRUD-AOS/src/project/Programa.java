@@ -12,141 +12,180 @@ public class Programa {
     public static void main(String[] args) {
 
         char opcao = 0;
-        String cpf , nome, telefone, complemento;
-        int cep, numeroCasa;
+        String cpf, nome, telefone, complemento, cep;
+        int numeroCasa;
         Cidadao cidadao = null;
 
-        System.out.println("CRUD AOS - Java + SQL Server");
 
-        System.out.println("Qual operação deseja realizar?\n");
-        System.out.println("Digite [C] para cadastrar dados");
-        System.out.println("Digite [R] para ler dados cadastrados");
-        System.out.println("Digite [U] para atualizar dados");
-        System.out.println("Digite [D] para deletar algum dado");
+        System.out.println("CRUD AOS - Java + SQL Server\n");
 
-        try{
-            opcao = Teclado.getUmChar();
-        } catch (Exception ignored) {}
+        while (opcao != Character.toUpperCase('C')||opcao != Character.toUpperCase('R') ||
+               opcao != Character.toUpperCase('U')||opcao != Character.toUpperCase('D')||
+               opcao != Character.toUpperCase('F'))
+        {
+            System.out.println("Qual operação deseja realizar?");
+            System.out.println("Digite [C] para cadastrar dados");
+            System.out.println("Digite [R] para ler dados cadastrados");
+            System.out.println("Digite [U] para atualizar dados");
+            System.out.println("Digite [D] para deletar algum dado");
+            System.out.println("Digite [F] para finalizar a aplicacao");
 
-        if(Character.toUpperCase(opcao) == 'C'){
-            try{
-                System.out.println("Digite o CPF do cidadao: ");
-                cpf = Teclado.getUmString();
-
-                System.out.println("Digite o nome do cidadao: ");
-                nome = Teclado.getUmString();
-
-                System.out.println("Digite o telefone do cidadao: ");
-                telefone = Teclado.getUmString();
-
-                System.out.println("Digite o numero da casa do cidadao: ");
-                numeroCasa = Teclado.getUmInt();
-
-                System.out.println("Digite o complemento da casa do cidadao: ");
-                complemento = Teclado.getUmString();
-
-                System.out.println("Digite o CEP do cidadao: ");
-                cep = Teclado.getUmInt();
-
-                Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        } else if (Character.toUpperCase(opcao) == 'R') {
-            try {
-                System.out.println("Deseja fazer uma consulta nos dados de TODOS os cidadaos cadastrados? [S] Sim ou [N] Nao: ");
+            try
+            {
                 opcao = Teclado.getUmChar();
+            }
+            catch (Exception ignored) { }
 
-                List<Cidadao> cidadaoList;
+            if (Character.toUpperCase(opcao) == 'C')
+            {
+                try {
+                    System.out.println("Digite o CPF do cidadao: ");
+                    cpf = Teclado.getUmString();
 
-                if (Character.toUpperCase(opcao) == 'S') {
+                    System.out.println("Digite o nome do cidadao: ");
+                    nome = Teclado.getUmString();
 
-                   cidadaoList = Cidadaos.readAll();
+                    System.out.println("Digite o telefone do cidadao: ");
+                    telefone = Teclado.getUmString();
 
-                    System.out.println("Lista dos dados cadastrados: ");
+                    System.out.println("Digite o numero da casa do cidadao: ");
+                    numeroCasa = Teclado.getUmInt();
 
-                    for (Cidadao c : cidadaoList) {
-                        System.out.println(c.toString());
+                    System.out.println("Digite o complemento da casa do cidadao: ");
+                    complemento = Teclado.getUmString();
+
+                    System.out.println("Digite o CEP do cidadao: ");
+                    cep = Teclado.getUmString();
+
+                    Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+            }
+            else if (Character.toUpperCase(opcao) == 'R')
+            {
+                try
+                {
+                    System.out.println("Deseja fazer uma consulta nos dados de TODOS os cidadaos cadastrados? [S] Sim ou [N] Nao: ");
+                    opcao = Teclado.getUmChar();
+
+                    List<Cidadao> cidadaoList;
+
+                    if (Character.toUpperCase(opcao) == 'S')
+                    {
+                        cidadaoList = Cidadaos.readAll();
+
+                        System.out.println("Lista dos dados cadastrados: ");
+
+                        for (Cidadao c : cidadaoList)
+                        {
+                            System.out.println(c.toString()+"\n");
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("Digite o CPF do cidadao que deseja consultar: ");
+
+                        try
+                        {
+                            cpf = Teclado.getUmString();
+
+                            cidadao = Cidadaos.read(cpf);
+
+                            System.out.println("Nome do cidadao: " + cidadao.getNome());
+                            System.out.println("Telefone do cidadao: " + cidadao.getTelefone());
+                            System.out.println("Numero da casa do cidadao: " + cidadao.getNumeroCasa());
+                            System.out.println("Complemento da casa do cidadao: " + cidadao.getComplemento());
+                            System.out.println("Numero do CEP do cidadao: " + cidadao.getCEP());
+
+
+                            System.out.println("Agora os dados do endereco deste cidadao: ");
+                            Logradouro logradouro = (Logradouro) ClienteWS.getObjeto(Logradouro.class, "https://api.postmon.com.br/v1/cep", String.valueOf(cidadao.getCEP()));
+                            System.out.println(logradouro);
+
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                            e.getMessage();
+                        }
                     }
                 }
-                else{
-                    System.out.println("Digite o CPF do cidadao que deseja consultar: ");
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                    e.getMessage();
+                }
 
-                    try {
+            }
+            else if (Character.toUpperCase(opcao) == 'U')
+            {
+                try
+                {
+                    System.out.println("Digite os dados que deseja atualizar");
+                    do
+                    {
+                        System.out.println("Digite o cpf do cidadao que sera atualizado:");
                         cpf = Teclado.getUmString();
 
-                        cidadao = Cidadaos.read(cpf);
+                    } while (!Cidadaos.cadastrado(cpf));
 
-                        System.out.println("Nome do cidadao: " + cidadao.getNome());
-                        System.out.println("Telefone do cidadao: " + cidadao.getTelefone());
-                        System.out.println("Numero da casa do cidadao: " + cidadao.getNumeroCasa());
-                        System.out.println("Complemento da casa do cidadao: " + cidadao.getComplemento());
-                        System.out.println("Numero do CEP do cidadao: " + cidadao.getCEP());
+                    System.out.println("Digite o nome atualizado do cidadao: ");
+                    nome = Teclado.getUmString();
 
-                        System.out.println("\n Agora os dados do endereco deste cidadao: ");
-                        Logradouro logradouro = (Logradouro) ClienteWS.getObjeto(Logradouro.class, "https://api.postmon.com.br/v1/cep", String.valueOf(cidadao.getCEP()));
-                        System.out.println(logradouro);
+                    System.out.println("Digite o telefone atualizado do cidadao: ");
+                    telefone = Teclado.getUmString();
 
-                    }catch (Exception e){
-                        e.printStackTrace();
-                        e.getMessage();
-                    }
+                    System.out.println("Digite o numero da casa atualizadp do cidadao: ");
+                    numeroCasa = Teclado.getUmInt();
+
+                    System.out.println("Digite o complemento atualizado do cidadao: ");
+                    complemento = Teclado.getUmString();
+
+                    System.out.println("Digite o CEP atualizado do cidadao: ");
+                    cep = Teclado.getUmString();
+
+                    Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+
                 }
-            }catch (Exception e){
-                e.printStackTrace();
-                e.getMessage();
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
             }
+            else if (Character.toUpperCase(opcao) == 'D')
+            {
+                try
+                {
+                   do
+                   {
+                      System.out.println("Digite o cpf do cidadao a ser deletado: ");
+                      cpf = Teclado.getUmString();
 
-        } else if (Character.toUpperCase(opcao) == 'U') {
-            try {
-                System.out.println("Digite os dados que deseja atualizar \n");
-                do{
-                    System.out.println("Digite o cpf do cidadao a atualizar:");
-                    cpf = Teclado.getUmString();
+                   }
+                   while (!Cidadaos.cadastrado(cpf));
+                   Cidadaos.delete(cpf);
 
-                }while(!Cidadaos.cadastrado(cpf));
-
-                System.out.println("Digite o nome do cidadao a atualizar: ");
-                nome = Teclado.getUmString();
-
-                System.out.println("Digite o telefone do cidadao a atualizar: ");
-                telefone = Teclado.getUmString();
-
-                System.out.println("Digite o numeroCasa da casa do cidadao a atualizar: ");
-                numeroCasa = Teclado.getUmInt();
-
-                System.out.println("Digite o complemento do cidadao a atualizar: ");
-                complemento = Teclado.getUmString();
-
-                System.out.println("Digite o CEP do cidadao a atualizar: ");
-                cep = Teclado.getUmInt();
-
-                Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
-
-            }catch (Exception e){
-             e.printStackTrace();
+                }
+                catch (Exception e)
+                {
+                    e.getMessage();
+                    e.printStackTrace();
+                }
             }
-
-        } else if (Character.toUpperCase(opcao) == 'D') {
-
-            try {
-                do {
-                    System.out.println("Digite o cpf do cidadao a ser deletado: ");
-                    cpf = Teclado.getUmString();
-
-                } while (!Cidadaos.cadastrado(cpf));
-
-                Cidadaos.delete(cpf);
-
-            }catch (Exception e){
-                e.getMessage();
-                e.printStackTrace();
+            else if (Character.toUpperCase(opcao) == 'F') {
+                System.out.println("Programa finalizado!\n");
+                System.exit(0);
             }
-        } else {
-            System.out.println("opcao invalida");
-            System.exit(0);
+            else
+            {
+                System.out.println("opcao invalida!\n");
+            }
         }
     }
 }
