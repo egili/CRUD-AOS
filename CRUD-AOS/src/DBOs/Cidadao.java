@@ -7,9 +7,9 @@ public class Cidadao implements Cloneable {
     private String telefone;
     private int numeroCasa;
     private String complemento;
-    private int CEP;
+    private String CEP;
 
-    public Cidadao(String cpf, String nome, String numeroComDDD,int numeroCasa, String complemento, int cep) throws Exception {
+    public Cidadao(String cpf, String nome, String numeroComDDD,int numeroCasa, String complemento, String cep) throws Exception {
         setCPF(cpf);
         setNome(nome);
         setTelefone(numeroComDDD);
@@ -80,14 +80,14 @@ public class Cidadao implements Cloneable {
         return complemento;
     }
 
-    public void setCEP(int cep) throws Exception {
-        if (cep < 0)
+    public void setCEP(String cep) throws Exception {
+        if (cep ==null)
             throw new Exception();
 
         CEP = cep;
     }
 
-    public int getCEP() {
+    public String getCEP() {
         return CEP;
     }
     

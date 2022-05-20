@@ -7,7 +7,7 @@ create table cidadao
    cid_telefone varchar(12) not null,
    cid_numeroDaCasa int,
    cid_complemento varchar(15),
-   cid_cep int not null
+   cid_cep varchar (10) not null
 )
 
 select * from cidadao
