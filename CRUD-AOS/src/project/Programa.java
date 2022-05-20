@@ -5,7 +5,6 @@ import DBOs.Cidadao;
 import project.helpers.Teclado;
 import project.template.ClienteWS;
 import project.template.Logradouro;
-
 import java.util.List;
 
 public class Programa {
@@ -108,7 +107,9 @@ public class Programa {
 
                 }while(!Cidadaos.cadastrado(cpf));
 
-                System.out.println("Digite o nome do cidadao a atualizar: ");
+                Cidadaos.delete(cpf);
+
+                System.out.println("Digite o nome cidadao a atualizar: ");
                 nome = Teclado.getUmString();
 
                 System.out.println("Digite o telefone do cidadao a atualizar: ");
@@ -123,7 +124,7 @@ public class Programa {
                 System.out.println("Digite o CEP do cidadao a atualizar: ");
                 cep = Teclado.getUmInt();
 
-                Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+                Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
 
             }catch (Exception e){
              e.printStackTrace();
