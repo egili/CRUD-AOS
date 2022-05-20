@@ -5,7 +5,6 @@ import DBOs.Cidadao;
 import project.helpers.Teclado;
 import project.template.ClienteWS;
 import project.template.Logradouro;
-
 import java.util.List;
 
 public class Programa {
@@ -122,40 +121,37 @@ public class Programa {
                 }
 
             }
-            else if (Character.toUpperCase(opcao) == 'U')
-            {
-                try
-                {
-                    System.out.println("Digite os dados que deseja atualizar");
-                    do
-                    {
-                        System.out.println("Digite o cpf do cidadao que sera atualizado:");
-                        cpf = Teclado.getUmString();
+            else if (Character.toUpperCase(opcao) == 'U') {
+            try {
+                System.out.println("Digite os dados que deseja atualizar \n");
+                do{
+                    System.out.println("Digite o cpf do cidadao a atualizar:");
+                    cpf = Teclado.getUmString();
 
-                    } while (!Cidadaos.cadastrado(cpf));
+                }while(!Cidadaos.cadastrado(cpf));
 
-                    System.out.println("Digite o nome atualizado do cidadao: ");
-                    nome = Teclado.getUmString();
+                Cidadaos.delete(cpf);
 
-                    System.out.println("Digite o telefone atualizado do cidadao: ");
-                    telefone = Teclado.getUmString();
+                System.out.println("Digite o nome cidadao a atualizar: ");
+                nome = Teclado.getUmString();
 
-                    System.out.println("Digite o numero da casa atualizadp do cidadao: ");
-                    numeroCasa = Teclado.getUmInt();
+                System.out.println("Digite o telefone do cidadao a atualizar: ");
+                telefone = Teclado.getUmString();
 
-                    System.out.println("Digite o complemento atualizado do cidadao: ");
-                    complemento = Teclado.getUmString();
+                System.out.println("Digite o numeroCasa da casa do cidadao a atualizar: ");
+                numeroCasa = Teclado.getUmInt();
 
-                    System.out.println("Digite o CEP atualizado do cidadao: ");
-                    cep = Teclado.getUmString();
+                System.out.println("Digite o complemento do cidadao a atualizar: ");
+                complemento = Teclado.getUmString();
 
-                    Cidadaos.update(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+                System.out.println("Digite o CEP do cidadao a atualizar: ");
+                cep = Teclado.getUmInt();
 
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
+                Cidadaos.create(new Cidadao(cpf, nome, telefone, numeroCasa, complemento, cep));
+
+            }catch (Exception e){
+             e.printStackTrace();
+            }
 
             }
             else if (Character.toUpperCase(opcao) == 'D')
