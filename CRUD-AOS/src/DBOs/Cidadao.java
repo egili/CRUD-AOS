@@ -1,6 +1,6 @@
 package DBOs;
 
-public class Cidadao implements Cloneable {
+public final class Cidadao implements Cloneable {
 
     private String CPF;
     private String nome;
@@ -35,6 +35,12 @@ public class Cidadao implements Cloneable {
         if (cpf == null)
             throw new Exception("o CPF precisa ter valor");
 
+        for(int i = 0; i < cpf.length(); i++)
+        {
+            if(cpf.charAt(i) < 48 || cpf.charAt(i) > 57)
+                throw new Exception("O cpf nao pode ter caracateres especiais");
+        }
+
         CPF = cpf;
     }
 
@@ -45,6 +51,12 @@ public class Cidadao implements Cloneable {
     public void setNome(String nome) throws Exception {
         if (nome == null)
             throw new Exception("o nome nao pode ser nulo");
+
+        for(int i = 0; i < nome.length(); i++)
+        {
+            if(nome.charAt(i) < 65 || nome.charAt(i) > 90 && nome.charAt(i) < 97 || nome.charAt(i) > 122)
+                throw new Exception("O nome nao pode ter caracteres especiais");
+        }
 
         this.nome = nome;
     }
