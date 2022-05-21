@@ -66,36 +66,53 @@ public class Cidadaos {
         }
     }
 
-    public static Cidadao read(String cpf) throws Exception{
+    public static List<Cidadao> read(String cpf) throws Exception{
         Cidadao cidadao = null;
+        MeuResultSet resultado = null;
+        List<Cidadao> cidList = new ArrayList<Cidadao>();
+        String cidCpf, nome, telefone, complemento, cep;
+        int numCasa;
 
         try {
             String sql;
 
-            sql = "SELECT * " +
+            sql = "SELECT TOP 1 * " +
                     "FROM cidadao" +
                     "WHERE cid_cpf = ?";
 
             BDSQLServer.COMANDO.prepareStatement(sql);
             BDSQLServer.COMANDO.setString(1, cpf);
 
-            MeuResultSet resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
+             resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery();
 
             if(!resultado.first())
                 throw new Exception("sem dados correspondemtes ao parametro informado");
 
-            cidadao = new Cidadao(resultado.getString("cid_cpf"),
-                    resultado.getString("cid_nome"),
-                    resultado.getString("cid_telefone"),
-                    resultado.getInt("cid_numeroDaCasa"),
-                    resultado.getString("cid_complemento"),
-                    resultado.getString("cid_cep"));
+            while (resultado.next()){
+                cpf = resultado.getString("cid_cpf");
+                nome = resultado.getString("cid_nome");
+                telefone = resultado.getString("cid_telefone");
+                numCasa = resultado.getInt("cid_numeroDaCasa");
+                complemento = resultado.getString("cid_complemento");
+                cep = resultado.getString("cid_cep");
+
+                cidadao = new Cidadao(cpf, nome, telefone, numCasa, complemento, cep);
+
+                cidList.add(cidadao);
+
+            }
+//            cidadao = new Cidadao(resultado.getString("cid_cpf"),
+//                    resultado.getString("cid_nome"),
+//                    resultado.getString("cid_telefone"),
+//                    resultado.getInt("cid_numeroDaCasa"),
+//                    resultado.getString("cid_complemento"),
+//                    resultado.getString("cid_cep"));
 
         } catch (SQLException erro){
             BDSQLServer.COMANDO.rollback();
             throw new Exception("erro ao procurar o cidadao");
         }
-        return cidadao;
+        return cidList;
     }
 
     public static List<Cidadao> readAll() throws Exception{
